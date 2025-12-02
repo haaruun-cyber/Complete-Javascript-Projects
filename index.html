@@ -25,11 +25,11 @@
 </head>
 <body class="bg-[#040404] text-white">
     <!-- Nav Bar part -->
-     <div class="bg-[#1E1E1E] flex justify-between items-center px-10 py-6 border-b-2 border-gray-500 backdrop-blur-[15px]" id="navbar">
+     <div class="bg-[#1E1E1E] flex justify-between items-center px-10 py-6 border-b-2 border-gray-500 backdrop-blur-[15px]" id="navbar" style="position: sticky; top: 0; z-index: 1000;">
         <!-- LOGO -->
         <img src="./images/whitelogo.png" alt="logo" width="200px" id="logo">
         <!-- DESKTOP menu part -->
-        <div class="hidden lg:flex gap-8 cursor-pointer">
+        <div class="hidden lg:flex gap-8 cursor-pointer" id="te">
             <a class="hover:text-[#5F5DFE] text-[#FFFFFF]  text-xl transition font-semibold" href="#">Home</a>
             <a class="hover:text-[#5F5DFE] text-[#FFFFFF]  text-xl font-semibold" href="#hero">About</a>
             <a class="hover:text-[#5F5DFE] text-[#FFFFFF]  text-xl font-semibold" href="#projects">Projects</a>
@@ -1018,7 +1018,7 @@
                 </form>
            </div>
 
-  
+
     <!-- Javascript part -->
     <script>
         //humbergur menu toggle function
@@ -1040,24 +1040,27 @@
            let logo = document.querySelector("#logo");
            let navbar = document.querySelector("#navbar");
            let icon = document.querySelector("#icon");
+           let te = document.querySelector("#te");
            if(i.classList.contains("fa-moon")){
-            logo.src = "./images/logo.png";
-            navbar.classList.remove("bg-[#1E1E1E]");
+            // logo.src = "./images/logo.png";
+            
             i.classList.remove("fa-moon");
-            i.classList.add("fa-sun", "mr-[-270px]", "text-[30px]", "cursor-pointer", "hover:text-[#5F5DFE]", "text-white", "ml-[40px]");
+            i.classList.add("fa-sun", "mr-[-270px]", "text-[30px]", "cursor-pointer", "hover:text-[#5F5DFE]", "text-black", "ml-[40px]");
             body.style.backgroundColor = "#ffffff";
             body.style.color = "#000000";
             btext.classList.add("text-black");
+            te.classList.add("text-black");
             btext2.classList.add("text-black");
             icon.classList.add("text-black");
             i.classList.add("text-black");
            }else{
-            logo.src = "./images/whitelogo.png";
-            navbar.classList.add("bg-[#1E1E1E]");
+            // logo.src = "./images/whitelogo.png";
+           
             i.classList.remove("fa-sun");
             i.classList.add("fa-moon", "mr-[-270px]", "text-[30px]", "cursor-pointer", "hover:text-[#5F5DFE]", "text-white", "ml-[40px]");
-            body.style.backgroundColor = "#040404";
-            body.style.color = "#ffffff";
+            body.classList.add("bg-[#040404]");
+            body.classList.add("text-[#ffffff]");
+            // body.style.color = "#ffffff";
             icon.classList.remove("text-black");
             i.classList.remove("text-black");
            }
