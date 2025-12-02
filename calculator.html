@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Css part -->
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@200;700&display=swap');
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: 'Roboto', sans-serif; /* or a more system-like font */
+            font-weight: 200; /* normal weight */
+        }   
+    </style>
+</head>
+<body class="flex justify-center items-center h-[100vh] bg-gray-200">
+
+    <!-- HTML part -->
+    <div class="container w-96 text-center shadow-[1px_1px_100px_3px_rgba(0,0,0,0.3)] rounded-lg bg-[2D3E50]">
+        <div class="showcalculation w-full bg-[#2D3E50] pt-5 pb-4 rounded-t-lg h-[90px] border-b-2 border-[#37495F]">
+            <input class="w-full text-right text-white pr-[20px] bg-transparent border-none text-[50px] font-[Roboto] tracking-[1px]" type="text" id="input" disabled>
+        
+        </div>
+        <div class="btns bg-[#2D3E50] p-6 rounded-b-lg">
+            <div class="allbtns flex h-[80px] mb-4">
+                <button class="w-full h-[100%] border-none cursor-pointer bg-[#2D3E50] text-[#FFFFFF] text-[30px] hover:bg-[#37495F] hover:rounded-full font-[Roboto]" id="btn7">7</button>
+                <button class="w-full h-[100%] border-none cursor-pointer bg-[#2D3E50] text-[#FFFFFF] text-[30px] hover:bg-[#37495F] hover:rounded-full font-[Roboto]" id="btn8">8</button>
+                <button class="w-full h-[100%] border-none cursor-pointer bg-[#2D3E50] text-[#FFFFFF] text-[30px] hover:bg-[#37495F] hover:rounded-full font-[Roboto]" id="btn9">9</button>
+                <button class="w-full h-[100%] border-none cursor-pointer bg-[#37495F] text-[#4895BB] text-[40px] rounded-[220px]" id="btnPlus">+</button>
+            </div>
+
+            <div class="allbtns flex h-[80px] mb-4">
+                <button class="w-full h-[100%] border-none cursor-pointer bg-[#2D3E50] text-[#FFFFFF] text-[30px] hover:bg-[#37495F] hover:rounded-full font-[Roboto]" id="btn4">4</button>
+                <button class="w-full h-[100%] border-none cursor-pointer bg-[#2D3E50] text-[#FFFFFF] text-[30px] hover:bg-[#37495F] hover:rounded-full font-[Roboto]" id="btn5">5</button>
+                <button class="w-full h-[100%] border-none cursor-pointer bg-[#2D3E50] text-[#FFFFFF] text-[30px] hover:bg-[#37495F] hover:rounded-full font-[Roboto]" id="btn6">6</button>
+                <button class="w-full h-[100%] border-none cursor-pointer bg-[#37495F] text-[#4895BB] text-[40px] rounded-full" id="btnMinus">-</button>
+            </div>
+
+            <div class="allbtns flex h-[80px] mb-4">
+                <button class="w-full h-[100%] border-none cursor-pointer bg-[#2D3E50] text-[#FFFFFF] text-[30px] hover:bg-[#37495F] hover:rounded-full font-[Roboto]" id="btn1">1</button>
+                <button class="w-full h-[100%] border-none cursor-pointer bg-[#2D3E50] text-[#FFFFFF] text-[30px] hover:bg-[#37495F] hover:rounded-full font-[Roboto]" id="btn2">2</button>
+                <button class="w-full h-[100%] border-none cursor-pointer bg-[#2D3E50] text-[#FFFFFF] text-[30px] hover:bg-[#37495F] hover:rounded-full font-[Roboto]" id="btn3">3</button>
+                <button class="w-full h-[100%] border-none cursor-pointer bg-[#37495F] text-[#4895BB] text-[40px] rounded-full" id="btnMulti">*</button>
+            </div>
+
+            <div class="allbtns flex h-[80px] mb-4">
+                <button class="w-full h-[100%] border-none cursor-pointer bg-[#2D3E50] text-[#FFFFFF] text-[20px] hover:bg-[#37495F] hover:rounded-full AC" id="btnAC">AC</button>
+                <button class="w-full h-[100%] border-none cursor-pointer bg-[#2D3E50] text-[#FFFFFF] text-[30px] hover:bg-[#37495F] hover:rounded-full font-[Roboto]" id="btn0">0</button>
+                <button class="w-full h-[100%] border-none cursor-pointer bg-[#2D3E50] text-[#FFFFFF] text-[30px] hover:bg-[#37495F] hover:rounded-full" id="btnDot">.</button>
+                <button class="w-full h-[100%] border-none cursor-pointer bg-[#37495F] text-[#4895BB] text-[30px] rounded-full" id="btnDivide">/</button>
+            </div>
+            <button id="btnEqual" class="w-full h-[100%] border-none cursor-pointer bg-[#37495F] text-[#4895BB] text-[40px] rounded-md equel">=</button>
+        </div>
+    </div>
+    <!-- javascript part -->
+    <script>
+        //input 
+        let input = document.getElementById('input')
+
+        //btn numbers
+        let btn1 = document.getElementById('btn1')
+        let btn2 = document.getElementById('btn2')
+        let btn3 = document.getElementById('btn3')
+        let btn4 = document.getElementById('btn4')
+        let btn5 = document.getElementById('btn5')
+        let btn6 = document.getElementById('btn6')
+        let btn7 = document.getElementById('btn7')
+        let btn8 = document.getElementById('btn8')
+        let btn9 = document.getElementById('btn9')
+        let btn0 = document.getElementById('btn0')
+
+        //symbol btns
+        let btnPlus = document.getElementById('btnPlus')
+        let btnMinus = document.getElementById('btnMinus')
+        let btnMulti = document.getElementById('btnMulti')
+        let btnDivide = document.getElementById('btnDivide')
+        let btnEqual = document.getElementById('btnEqual')
+        let btnAC = document.getElementById('btnAC') 
+        let btnDot = document.getElementById('btnDot')
+
+        //btn numbers
+        btn0.addEventListener('click',()=>{
+            input.value += 0
+        })
+        btn1.addEventListener('click',()=>{
+            input.value += 1
+        })
+        btn2.addEventListener('click',()=>{
+            input.value += 2
+        })
+        btn3.addEventListener('click',()=>{
+            input.value += 3
+        })
+        btn4.addEventListener('click',()=>{
+            input.value += 4
+        })
+        btn5.addEventListener('click',()=>{
+            input.value += 5
+        })
+        btn6.addEventListener('click',()=>{
+            input.value += 6
+        })
+        btn7.addEventListener('click',()=>{
+            input.value += 7
+        })
+        btn8.addEventListener('click',()=>{
+            input.value += 8
+        })
+        btn9.addEventListener('click',()=>{
+            input.value += 9
+        })
+
+        //symbol btns
+        btnPlus.addEventListener('click',()=>{
+            input.value += '+';
+        })
+        btnMinus.addEventListener('click',()=>{
+            input.value += "-";
+        })
+        btnMulti.addEventListener('click',()=>{
+            input.value += "*";
+        })
+        btnDivide.addEventListener('click',()=>{
+            input.value += "/";
+        })
+        btnDot.addEventListener('click',()=>{
+            if(!input.value.includes('.')){
+                input.value += '.'
+            }
+        })
+        btnAC.addEventListener('click',()=>{
+            input.value = "";
+        })
+        btnEqual.addEventListener('click',()=>{
+            try {
+                input.value = eval(input.value)
+            } catch (error) {
+                input.value = "Error";
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clock Project</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- CSS part -->
+    <style>
+         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+        /* CSS part */
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: "Poppins", sans-serif;
+        }
+                /* From Uiverse.io by akshat-patel28 */ 
+        .card {
+        width: 280px;
+        height: 150px;
+        background: rgb(17, 4, 134);
+        border-radius: 15px;
+        box-shadow: rgb(0,0,0,0.7) 5px 10px 50px ,rgb(0,0,0,0.7) -5px 0px 250px;
+        display: flex;
+        color: white;
+        justify-content: center;
+        position: relative;
+        flex-direction: column;
+        background: linear-gradient(to right, rgb(20, 30, 48), rgb(36, 59, 85));
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        overflow: hidden;
+        }
+
+        .card:hover {
+        box-shadow: rgb(0,0,0) 5px 10px 50px ,rgb(0,0,0) -5px 0px 250px;
+        }
+
+        .time-text {
+        font-size: 50px;
+        margin-top: 0px;
+        margin-left: 15px;
+        font-weight: 600;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .time-sub-text {
+        font-size: 15px;
+        margin-left: 5px;
+        }
+
+        .day-text {
+        font-size: 18px;
+        margin-top: 0px;
+        margin-left: 15px;
+        font-weight: 500;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .moon {
+        font-size: 20px;
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        transition: all 0.3s ease-in-out;
+        }
+
+        .card:hover > .moon {
+        font-size: 23px;
+        }
+
+    </style>
+</head>
+<body class="flex items-center justify-center h-[100vh]">
+    <!-- HTML part -->
+    <!-- From Uiverse.io by akshat-patel28 --> 
+    <div class="card">
+    <p class="time-text"><span id="h&m"></span><span class="time-sub-text" id="s"></span><span class="time-sub-text">PM</span></p>
+    <p class="day-text"></p>
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" stroke-width="0" fill="currentColor" stroke="currentColor" class="moon"><path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"></path><path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"></path></svg>
+    </div>
+    <!-- javascipt part -->
+    <script>
+        //let show = document.getElementById("show")
+        let hm = document.getElementById("h&m")
+        let s = document.getElementById("s")
+        let day_text = document.querySelector(".day-text")
+        
+        setInterval(()=>{
+            const date = new Date()
+            let hours = date.getHours()
+            let minutes = date.getMinutes()
+            let seconds = date.getSeconds()
+            let milisecond = date.getMilliseconds()
+            let day = date.getDay()
+            let month = date.getMonth()
+            const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            let dayname = weekdays[day]
+            // console.log(dayname)
+            const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            let monthname = monthNames[month]
+            // console.log(monthname)
+            hm.innerHTML = `${hours}:${minutes}`
+            s.innerHTML = `${seconds}`
+            day_text.innerHTML = `${dayname} ${monthname}`
+        },1000)
+        //example
+        // const d = new Date();
+        // console.log(d.getFullYear());  // Get the full year (e.g., 2025)
+        // console.log(d.getMonth());     // Get the month (0-11)
+        // console.log(d.getDate());      // Get the day of the month (1-31)
+        // console.log(d.getDay());       // Get the day of the week (0 for Sunday, 6 for Saturday)
+        // console.log(d.getHours());     // Get the hour (0-23)
+        // console.log(d.getMinutes());   // Get the minutes (0-59)
+        // console.log(d.getSeconds());   // Get the seconds (0-59)
+        // console.log(d.getMilliseconds()); // Get the milliseconds (0-999)
+        // console.log(d.getTime());      // Get the time in milliseconds since epoch
+    </script>
+</body>
+</html>

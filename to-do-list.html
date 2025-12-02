@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO-DO-LIST</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- CSS part -->
+    <style>
+          @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+        /* CSS part */
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: "Poppins", sans-serif;
+        }
+          .form input:focus{
+            outline: none;
+            border: none;
+        }
+    </style>
+</head>
+<body class="flex justify-center items-center h-[100vh]">
+    
+    <!-- html part -->
+    <div class="container w-[400px] shadow-[1px_1px_100px_3px_rgba(0,0,0,0.3)] rounded-[10px] p-[20px_0px_20px_0px]">
+        <h1 class="text-center">To-Do-List</h1>
+        <div class="form p-[20px_23px_23px_23px] text-center">
+            <input class="w-[80%] h-[30px] pl-[10px]" type="text" placeholder="Add Task Here" id="input">
+            <button class="w-[50px] h-[30px] -ml-[4px] cursor-pointer rounded-[0px_10px_10px_0px] bg-[rgb(25,211,118)] text-[aliceblue] border-none" onclick="addtask()">Add</button>
+        </div>
+        <div class="tasks" id="tasks">
+            <!-- tasks will appear here -->
+        </div>
+    </div>
+
+    <!-- javaScript part -->
+    <script>
+        let input = document.getElementById('input')
+        let tasks = document.getElementById('tasks')
+        //all login in one function
+            function addtask(){
+                if(input.value === ""){
+                    alert("Error: input is empty")
+                    return
+                }
+                   //create div for all
+                    let div = document.createElement('div')
+                    div.className = "task flex items-center justify-center gap-[30px] mb-[10px]"
+
+                    //create checkbox
+                    let check = document.createElement('input')
+                    check.type = "checkbox"
+
+                    //create text
+                    let text = document.createElement('p')
+                    text.innerText = input.value
+
+                    //create delete
+                    let btndelete = document.createElement('button')
+                    btndelete.innerHTML = "Delete"
+                    btndelete.className = "cursor-pointer rounded-[3px] bg-[rgb(255,0,0)] text-[aliceblue] border-none px-[8px] py-[4px]"
+
+                    // Checkbox strike-through logic
+                    check.addEventListener('change',()=>{
+                        text.style.textDecoration = check.checked ? "line-through" : "none";
+                    });
+
+                    //Delete logic
+                    btndelete.addEventListener('click',()=>{
+                        div.remove();
+                    })
+
+                    div.appendChild(check)
+                    div.appendChild(text)
+                    div.appendChild(btndelete)
+                    tasks.appendChild(div)                    
+                    input.value =  ""
+            }
+    </script>
+</body>
+</html>

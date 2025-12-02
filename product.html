@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Aplication</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- CSS part -->
+    <style>
+         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+        /* CSS part */
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: "Poppins", sans-serif;
+        }
+        #round{
+            border-radius: 10px 10px 0px 0px;
+        }
+                /* From Uiverse.io by satyamchaudharydev */ 
+        .loading {
+        --speed-of-animation: 0.9s;
+        --gap: 6px;
+        --first-color: #4c86f9;
+        --second-color: #49a84c;
+        --third-color: #f6bb02;
+        --fourth-color: #f6bb02;
+        --fifth-color: #2196f3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        gap: 6px;
+        height: 100px;
+        }
+
+        .loading span {
+        width: 4px;
+        height: 50px;
+        background: var(--first-color);
+        animation: scale var(--speed-of-animation) ease-in-out infinite;
+        }
+
+        .loading span:nth-child(2) {
+        background: var(--second-color);
+        animation-delay: -0.8s;
+        }
+
+        .loading span:nth-child(3) {
+        background: var(--third-color);
+        animation-delay: -0.7s;
+        }
+
+        .loading span:nth-child(4) {
+        background: var(--fourth-color);
+        animation-delay: -0.6s;
+        }
+
+        .loading span:nth-child(5) {
+        background: var(--fifth-color);
+        animation-delay: -0.5s;
+        }
+
+        @keyframes scale {
+        0%, 40%, 100% {
+        transform: scaleY(0.05);
+        }
+
+        20% {
+        transform: scaleY(1);
+        }
+        }
+        .loader {
+            transition: opacity 0.5s ease;
+        }
+        .loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+        #logo {
+            opacity: 0;
+            transition: opacity 0.6s ease;
+        }
+        #logo.visible {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- HTML part -->
+      <!-- loader Here -->
+       <!-- From Uiverse.io by satyamchaudharydev --> 
+        <div class="loader">
+        <div class="flex justify-center items-center h-[100vh]">
+        <div class="loading">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        </div>
+        </div>
+      <!-- logo Here -->
+        <h1 class="text-center p-10 font-semibold text-[40px]" id="logo">Recipe Application
+            <i class="fa-solid fa-utensils"></i>
+        </h1>
+
+     <!-- Products Here -->
+    <div class="container p-[20px] flex flex-col items-center gap-8 lg:grid lg:grid-cols-3 lg:place-items-center">
+    </div>
+
+    <!-- Javascript part -->
+    <script>
+        //loading
+        
+
+        window.addEventListener('load',()=>{
+            let loader = document.querySelector('.loader')
+            let logo = document.querySelector('#logo')
+            setTimeout(()=>{
+                // loader.style.visibility = "hidden";
+                loader.classList.add("hidden"); // <-- fade-out works now!
+                // logo.style.visibility = "visible";
+                logo.classList.add("visible");
+            },3000)
+        })
+
+
+
+        async function getdata(){
+            try {
+            let url = "https://dummyjson.com/recipes";
+            let response = await fetch(url)
+            if(!response.ok){
+                alert('Error: Fetching Data')
+                return
+            }
+            let data = await response.json();
+            let html = ""
+            let cont = document.querySelector('.container')
+            data.recipes.slice(0,100).forEach(element => {
+                    html = ` <div class="w-[400px] rounded-[10px] p-[20px] m-[15px] shadow-lg overflow-hidden pb-8">
+                                <a href="detail.html?id=${element.id}">
+                                <img src="${element.image}" alt="image" width="200px" class="w-full" id="round">
+                                </a>
+                                <div>
+                                    <p class="pl-[20px] text-[23px] font-semibold pt-4">${element.name}</p>
+                                    <p class="pl-[20px] text-md">⭐ ${element.rating} (${element.reviewCount} reviews)</p>
+                                    <div class="flex items-center gap-5 pl-5 pt-2">
+                                        <p class="bg-red-200 px-5 py-1 rounded-full text-red-900">${element.tags[0]}</p>
+                                        <p class="bg-green-200 px-5 py-1 rounded-full text-green-900">${element.tags[1]}</p>
+                                    </div>
+
+                                    <div class="grid grid-cols-2 pl-5 pt-5 leading-8">
+                                        <p class="font-semibold">Prep: <span class="font-normal">${element.prepTimeMinutes}</span></p>
+                                        <p class="font-semibold">Cook: <span class="font-normal">${element.cookTimeMinutes}</span></p>
+                                        <p class="font-semibold">Serving: <span class="font-normal">${element.servings}</span></p>
+                                        <p class="font-semibold">Difficulty: <span class="font-normal">${element.difficulty}</span></p>
+                                    </div>
+
+                                    <div class="pl-5 flex items-center justify-between px-10 pb-5 pt-3">
+                                        <p class="text-[#545452]">Cuisine: ${element.cuisine}</p>
+                                        <p class="text-[#545452]">MealType: ${element.mealType[0]}</p>
+                                    </div>
+                                    <a href="detail.html?id=${element.id}">
+                                        <div class="flex justify-center px-10">
+                                            <button class="bg-black text-white rounded-lg h-[40px] text-lg w-full po">View Recipe</button>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>`
+                cont.innerHTML += html;
+                
+            });
+
+            console.log(data)
+            } catch (error) {
+                console.error(error)
+            }
+        }
+        getdata();
+    </script>
+</body>
+</html>

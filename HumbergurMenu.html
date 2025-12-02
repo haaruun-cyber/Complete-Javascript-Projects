@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Humbergur menu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- CSS part -->
+    <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+        /* CSS part */
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: "Poppins", sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-[#101723]">
+    <!-- Nav Bar part -->
+     <div class="bg-[#ffffff] flex justify-between items-center px-10 py-6">
+        <!-- LOGO -->
+        <img src="./images/logo.png" alt="logo" width="200px">
+        <!-- DESKTOP menu part -->
+        <div class="hidden lg:flex gap-8 cursor-pointer">
+            <a class="hover:text-[#5F5DFE] text-[#101723]  text-xl transition font-semibold" href="#">Home</a>
+            <a class="hover:text-[#5F5DFE] text-[#101723]  text-xl font-semibold" href="#">About</a>
+            <a class="hover:text-[#5F5DFE] text-[#101723]  text-xl font-semibold" href="#">Projects</a>
+            <a class="hover:text-[#5F5DFE] text-[#101723]  text-xl font-semibold" href="#">Service</a>
+            <a class="hover:text-[#5F5DFE] text-[#101723]  text-xl font-semibold" href="#">Contact</a>
+        </div>
+        <!-- DESKTOP button -->
+        <a class="hidden lg:flex bg-[#5F5DFE] px-6 py-2 rounded-md text-lg text-[#ffffff] mr-[-270px]" href="#">Start Now</a>
+        <!-- humburgur menu icon -->
+        <i class="fa-solid fa-bars-staggered lg:hidden text-[30px] cursor-pointer hover:text-[#5F5DFE] ml-[220px]" id="icon" onclick="toggle()"></i>
+        <!-- mobile menu part -->
+         <div>
+            <div class="hidden flex flex-col gap-5 cursor-pointer lg:hidden absolute bg-white p-5 top-0 right-0 mr-10 mt-36 w-[200px] shadow-xl text-center rounded-md" id="div">
+                <a class="hover:text-[#5F5DFE] text-[#101723]  text-lg transition font-semibold" href="#">Home</a>
+                <a class="hover:text-[#5F5DFE] text-[#101723]  text-lg font-semibold" href="#">About</a>
+                <a class="hover:text-[#5F5DFE] text-[#101723]  text-lg font-semibold" href="#">Projects</a>
+                <a class="hover:text-[#5F5DFE] text-[#101723]  text-lg font-semibold" href="#">Service</a>
+                <a class="hover:text-[#5F5DFE] text-[#101723]  text-lg font-semibold" href="#">Contact</a>
+                <!-- MOBILE button -->
+                <a class="bg-[#5F5DFE] px-6 py-2 rounded-md  text-lg text-[#ffffff]  lg:hidden" href="#">Start Now</a>
+            </div>
+         </div>
+     </div>
+  
+<!-- <i class="fa-solid fa-xmark"></i> -->
+    <!-- Javascript part -->
+    <script>
+        function toggle(){
+            
+            let icon = document.querySelector("#icon");
+            let div = document.querySelector("#div");
+            if(icon.className.includes("fa-solid fa-bars-staggered")){
+            icon.className = "fa-solid fa-xmark text-[30px] cursor-pointer hover:text-[#5F5DFE] ml-[220px]"
+            div.classList.remove("hidden");
+            }else{
+                icon.className = "fa-solid fa-bars-staggered lg:hidden text-[30px] cursor-pointer hover:text-[#5F5DFE] ml-[220px]"
+                div.classList.add("hidden");
+            }
+
+        }
+ 
+    </script>
+</body>
+</html>

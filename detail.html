@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Aplication 2</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- CSS part -->
+    <style>
+         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+        /* CSS part */
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: "Poppins", sans-serif;
+        }
+        #back{
+            background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+            border:1px solid rgba(255,255,255,0.03);
+        }
+    </style>
+</head>
+<body class="p-[20px]">
+    <!-- HTML part -->
+     <div class="container bg-[#0A101D] rounded-md text-white lg:flex">
+        <!-- Data will be shown here -->              
+     </div>
+
+    <!-- Javascript part -->
+    <script>
+        let url = new URL(window.location.href);
+        let id = url.searchParams.get("id");
+        console.log(id);
+        async function getdetail() {
+             try {
+                let URL = `https://dummyjson.com/recipes/${id}`
+                let response = await fetch(URL)
+                if(!response.ok){
+                    throw new Error("Error: Response Data!!")
+                    return
+                }
+                let data = await response.json();
+                let container = document.querySelector(".container")
+                console.log(data)
+                let html = "";
+                html = `
+                
+        <div class="p-10 w-full">
+        <h1 class="font-bold text-[30px]">${data.name}</h1>
+
+        <div class="flex justify-between items-center pt-3">
+            <div class="flex justify-between items-center gap-5">
+                <p class="text-orange-500">⭐ ${data.rating}</p>
+                <p class="text-[#D3D3D2]">${data.reviewCount} Reveiws</p>
+            </div>
+            <div class="flex justify-between items-center gap-2">
+                <p class="bg-[#2A2A29] rounded-xl px-4 py-1 text-sm " id="back">${data.tags[0]}</p>
+                <p class="bg-[#2A2A29] rounded-xl px-4 py-1 text-sm" id="back">${data.tags[1]}</p>
+                <p class="bg-[#2A2A29] rounded-xl px-4 py-1 text-sm" id="back">${data.mealType[0]}</p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-3 gap-3 mt-7 mb-8">
+            <div class="flex items-center gap-3 bg-[#2A2A29] bg-[#2A2A29] rounded-xl px-4 py-2 w-[150px]" id="back">
+                <h4 class="font-bold">Prep:</h4> 
+                <p class="text-sm text-[#D3D3D2]">${data.prepTimeMinutes}</p>
+            </div>
+            
+             <div class="flex items-center gap-3 bg-[#2A2A29] bg-[#2A2A29] rounded-xl px-4 py-2 w-[150px]" id="back">
+                <h4 class="font-bold">Cook</h4> 
+                <p class="text-sm text-[#D3D3D2]">${data.cookTimeMinutes}</p>
+            </div>
+
+             <div class="flex items-center gap-3 bg-[#2A2A29] bg-[#2A2A29] rounded-xl px-4 py-2 w-[150px]" id="back">
+                <h4 class="font-bold">Serves</h4> 
+                <p class="text-sm text-[#D3D3D2]">${data.servings}</p>
+            </div>
+
+             <div class="flex items-center gap-3 bg-[#2A2A29] bg-[#2A2A29] rounded-xl px-4 py-2 w-[150px]" id="back">
+                <h4 class="font-bold">Difficulty</h4> 
+                <p class="text-sm text-[#D3D3D2]">${data.difficulty}</p>
+            </div>
+
+             <div class="flex items-center gap-3 bg-[#2A2A29] bg-[#2A2A29] rounded-xl px-4 py-2 w-[150px]" id="back">
+                <h4 class="font-bold">Colories</h4> 
+                <p class="text-sm text-[#D3D3D2]">${data.caloriesPerServing}</p>
+            </div>
+        </div>
+
+        <h1 class="text-xl">Ingredients</h1>
+        <ul class="text-white pl-5 leading-8 text-sm mb-5">
+            <li>
+                <i class="fa-solid fa-octagon mr-1 text-sm"></i>
+                ${data.ingredients[0]}
+            </li>
+            <li>
+                <i class="fa-solid fa-octagon mr-1 text-sm"></i>
+                ${data.ingredients[1]}
+            </li>
+            <li>
+                <i class="fa-solid fa-octagon mr-1 text-sm"></i>
+                ${data.ingredients[2]}
+            </li>
+            <li>
+                <i class="fa-solid fa-octagon mr-1 text-sm"></i>
+                ${data.ingredients[3]}
+            </li>
+            <li>
+                <i class="fa-solid fa-octagon mr-1 text-sm"></i>
+                ${data.ingredients[4]}
+            </li>
+            <li>
+                <i class="fa-solid fa-octagon mr-1 text-sm"></i>
+                ${data.ingredients[5]}
+            </li>
+        </ul>
+       
+        <h2 class="text-xl">Instructions</h2>
+        <ol type="1" class="text-white pl-5 leading-8 text-sm">
+            <li>1. ${data.instructions[0]}</li>
+            <li>2. ${data.instructions[1]}</li>
+            <li>3. ${data.instructions[2]}</li>
+            <li>4. ${data.instructions[3]}</li>
+            <li>5. ${data.instructions[4]}</li>
+            <li>6. ${data.instructions[1]}</li>
+        </ol>
+
+        <div class="flex items-center justify-between mt-10 gap-5">
+            <div class="flex items-center gap-5">
+            <div class="flex items-center gap-2">
+                <p class="text-lg text-[#D3D3D2]">Cuise:</p>
+                <h1 class="font-bold">${data.cuisine}</h1>
+            </div>
+            <div class="flex items-center gap-2">
+                <p class="text-[#D3D3D2]">MealType:</p>
+                <h1 class="font-bold">${data.mealType[0]}</h1>
+            </div>
+            </div>
+            <div class="flex items-center gap-2">
+                <p class="text-[#D3D3D2]">Recipe ID:</p>
+                <h1 class="font-bold">${data.id}</h1>
+            </div>
+        </div>
+        </div>
+
+        
+
+
+         <div class="bg-[#101723] flex justify-center items-center w-full rounded-md pt-20">
+            <div>
+            <div class="flex items-center justify-center">
+            <img src="${data.image}" alt="image" width="550px" class="rounded-lg">
+            </div>
+
+            <div class="flex items-center justify-between px-10 mt-10">
+
+              <div>
+                <h2 class="font-bold">${data.name}</h2>
+                <p class="text-[#D3D3D2] text-sm">by user ${data.userId} | rating <span class="text-orange-500 font-bold">${data.reviewCount}</span></p>
+              </div>
+
+              <div class="ml-20">
+                <div class="flex items-center gap-3 bg-[#2A2A29] rounded-xl px-4 py-2 w-[130px] mb-3" id="back">
+                    <p class="text-sm text-[#D3D3D2] text-center">${data.reviewCount} reviews</p>
+                </div>
+                 <div class="flex items-center gap-3 bg-[#2A2A29] rounded-xl px-4 py-2 w-[180px]" id="back">
+                    <p class="text-sm text-[#D3D3D2] text-center">${data.caloriesPerServing} kcal | serving</p>
+                </div>
+              </div>
+            </div>
+
+            </div>
+         </div>
+                `;
+                container.innerHTML = html;
+            } catch (error) {
+                console.error("Catch:",error)
+            }
+        }
+        getdetail();
+    </script>
+</body>
+</html>

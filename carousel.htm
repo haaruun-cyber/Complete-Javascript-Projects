@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>carousel-image</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .carousel{
+            width: 600px;
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        .carousel img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="carousel">
+        <!-- icon -->
+        <i class="fa-solid fa-arrow-left-long" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); cursor: pointer; color: rgb(0, 0, 0); font-size: 30px;" onclick="left()"></i>
+        <img id="carousel-image" src="images/weather.PNG" alt="Carousel Image" width="600" height="400">
+        <i class="fa-solid fa-arrow-right-long" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); cursor: pointer; color: rgb(0, 0, 0); font-size: 30px;" onclick="right()"></i>    
+    </div>
+
+    <script>
+        let image = document.querySelector("img");
+        // image.src = "images/hero.png";
+        let images = ["images/weather.PNG","images/hero.png","images/hero2.png"]
+        let index = 0;
+        function right(){
+            index++;
+            if(index >= images.length){
+                index = 0;
+            }
+            image.src = images[index];
+        }
+
+        function left(){
+            index--;
+            if(index < 0){
+                index = images.length - 1;
+            }
+            image.src = images[index];
+        }
+    </script>
+</body>
+</html>

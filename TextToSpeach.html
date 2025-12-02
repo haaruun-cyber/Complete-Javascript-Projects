@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to Speech</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- CSS part -->
+    <style>
+          @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+        /* CSS part */
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: "Poppins", sans-serif;
+        }
+        .form input:focus{
+            outline: none;
+            border: none;
+        }
+    </style>
+</head>
+<body class="flex justify-center items-center h-[100vh]">
+    
+    <!-- html part -->
+    <div class="container w-[400px] shadow-[1px_1px_100px_3px_rgba(0,0,0,0.3)] rounded-[10px] p-[20px_0px_20px_0px]">
+        <h1 class="text-center text-xl font-semibold">Text to Speech</h1>
+        <div class="form p-[20px_23px_23px_23px] text-center">
+            <input class="w-[80%] h-[30px] pl-[10px]" type="text" placeholder="Type Text Here" id="input" value="I developed a Text-to-Speech Web App using HTML, CSS (Tailwind), and JavaScript. The app allows users to type text and converts it into spoken words using the browser’s speech synthesis API. It demonstrates interactive UI and practical use of web APIs for accessibility and user engagement.">
+            <button class="w-[60px] h-[30px] -ml-[4px] cursor-pointer rounded-[0px_10px_10px_0px] bg-[rgb(25,211,118)] text-[aliceblue] border-none" onclick="speakText()">Speak</button>
+        </div>
+        <div class="tasks" id="tasks">
+            <!-- tasks will appear here -->
+        </div>
+    </div>
+
+    <!-- javaScript part -->
+    <script>
+        function speakText(){
+            let inputText = document.getElementById("input").value;
+            if("speechSynthesis" in window){
+                let utterance = new SpeechSynthesisUtterance();
+                utterance.text = inputText;
+                // utterance.lang = 'en-US';
+                utterance.lang = 'so-SO';
+                window.speechSynthesis.speak(utterance);
+            }else{
+                alert("Your browser does not support text to speech.");
+            }
+        }
+     
+    </script>
+</body>
+</html>

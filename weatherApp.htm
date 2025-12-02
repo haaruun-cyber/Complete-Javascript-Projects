@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- CSS part -->
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    body{
+        font-family: 'poppins';
+    }    
+    .inputsection input:focus{
+        border: none;
+        outline: none;
+    }
+    </style>
+</head>
+<body class="flex justify-center items-center h-[100vh] bg-[url(./images/hero2.png)] bg-no-repeat bg-cover bg-center">
+    <!-- HTML part -->
+    <div class="container w-[400px] shadow-[1px_1px_100px_3px_rgba(0,0,0,0.3)] rounded-[10px] p-[30px_30px] bg-[rgba(255,255,255,0.1)] backdrop-blur-[15px]">
+        <div class="inputsection flex justify-center items-center pb-[30px] w-[100%] relative">
+            <i class="fa-solid fa-location-dot color-[rgb(0, 0, 0)] absolute left-[10px] text-lg"></i>
+            <input class="w-full bg-[rgba(255,255,255,0.1)] backdrop-blur-[20px] p-[10px_10px_10px_50px] rounded-[10px] text-lg border-[ 1px solid rgba(255, 255, 255, 0.1)]" type="text" value="mogadishu" id="input" onchange="getdata()">
+            <i class="fa-solid fa-magnifying-glass color-[rgb(0, 0, 0)] absolute right-[10px] text-lg cursor-pointer" id="search" ></i>
+        </div>
+        <div id="show">
+
+        <div class="content text-center mt-[30px]" id="one">
+            <i class="fa-regular fa-cloud mb-[10px] text-[100px] text-white" id="weatherIcon"></i>
+            <div class="text text-center">
+                <h1 id="temp" class="text-[30px] text-white"></h1>
+                <p id="description" class="text-white"></p>
+                <p id="country" class="text-white"></p>
+            </div>
+        </div>
+
+        <div class="twoparent flex justify-evenly items-center mt-[50px]" id="two">
+            <div class="two flex justify-evenly items-center gap-[15px]">
+                <i class="fa-solid fa-water i  text-[30px] text-white"></i>
+                <div>
+                    <h3 id="humidity"></h3>
+                    <p>humidity</p>
+                </div>
+            </div>
+            <div class="two flex justify-evenly items-center gap-[15px]">
+                <i class="fa-solid fa-wind i text-[30px] text-white"></i>
+                <div>
+                    <h3 id="wind"></h3>
+                    <p>wind speed</p>
+                </div>
+            </div>
+        </div>
+         </div>
+    </div>
+
+    <!-- Javascript part -->
+     <script>
+
+        let input = document.getElementById('input')
+        let show = document.getElementById('show')
+        let weatherIcon = document.getElementById('weatherIcon')
+
+        async function getdata() {
+
+            let cityname = input.value.trim();
+            let api_key = "a3afefa696ac337ef739bee543bd12f8";
+            let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityname}&appid=${api_key}&units=metric`
+            
+            //remove exiciting errors
+            let olderror = document.getElementById('error')
+            if(olderror) olderror.remove();
+
+            let response = await fetch(url)
+
+            if(!response.ok){
+                //hide ui
+                document.querySelector("#one").style.display = "none";
+                document.querySelector("#two").style.display = "none";
+                //show Error
+                show.insertAdjacentHTML("afterbegin",`<div class="content text-center mt-[30px]" id="error">
+                            <i class="fa-solid fa-ban text-white text-[100px] text-center"></i>
+                            <div class="text text-white text-center mt-5">
+                                <p>No City Ware Found</p>
+                            </div>
+                        </div>`);
+                return
+            }
+
+            //show the ui 
+            document.querySelector("#one").style.display = "block";
+            document.querySelector("#two").style.display = "flex";
+            if(olderror) olderror.remove();
+
+            let data = await response.json();
+            console.log(response)
+            console.log(data)
+
+            let wind = document.getElementById('wind')
+            let temp = document.getElementById('temp')
+            let humidity = document.getElementById('humidity')
+            let country = document.getElementById('country')
+            let description = document.getElementById('description')
+
+            temp.innerHTML = `${data.main.temp} °C`;
+            country.innerHTML = `${data.sys.country}: ${data.name} `;
+            humidity.innerHTML = `${data.main.humidity}%`;
+            wind.innerHTML = `${data.wind.speed}km/h`;
+            description.innerHTML = `${data.weather[0].description}`;
+            //daynamic icon
+            let weather = data.weather[0].main
+
+            if (weather === "Clear") {
+                weatherIcon.className = "fa-solid fa-sun text-white text-[100px]";
+            }
+            else if (weather === "Clouds") {
+                weatherIcon.className = "fa-solid fa-cloud text-white text-[100px]";
+            }
+            else if (weather === "Rain") {
+                weatherIcon.className = "fa-solid fa-cloud-showers-heavy text-white text-[100px]";
+            }
+            else if (weather === "Drizzle") {
+                weatherIcon.className = "fa-solid fa-cloud-rain text-white text-[100px]";
+            }
+            else if (weather === "Thunderstorm") {
+                weatherIcon.className = "fa-solid fa-bolt text-white text-[100px]";
+            }
+            else if (weather === "Snow") {
+                weatherIcon.className = "fa-solid fa-snowflake text-white text-[100px]";
+            }
+            else if (weather === "Mist" || weather === "Fog" || weather === "Haze") {
+                weatherIcon.className = "fa-solid fa-smog text-white text-[100px]";
+            }
+            
+        }
+        getdata()
+     </script>
+</body>
+</html>

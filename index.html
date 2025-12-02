@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code With Harun</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" type="image/png">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- CSS part -->
+    <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+        /* CSS part */
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: "Poppins", sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-[#040404] text-white">
+    <!-- Nav Bar part -->
+     <div class="bg-[#1E1E1E] flex justify-between items-center px-10 py-6 border-b-2 border-gray-500 backdrop-blur-[15px]" id="navbar">
+        <!-- LOGO -->
+        <img src="./images/whitelogo.png" alt="logo" width="200px" id="logo">
+        <!-- DESKTOP menu part -->
+        <div class="hidden lg:flex gap-8 cursor-pointer">
+            <a class="hover:text-[#5F5DFE] text-[#FFFFFF]  text-xl transition font-semibold" href="#">Home</a>
+            <a class="hover:text-[#5F5DFE] text-[#FFFFFF]  text-xl font-semibold" href="#">About</a>
+            <a class="hover:text-[#5F5DFE] text-[#FFFFFF]  text-xl font-semibold" href="#">Projects</a>
+            <a class="hover:text-[#5F5DFE] text-[#FFFFFF]  text-xl font-semibold" href="#">Service</a>
+            <a class="hover:text-[#5F5DFE] text-[#FFFFFF]  text-xl font-semibold" href="#">Contact</a>
+        </div>
+        <!-- DESKTOP button -->
+        <a class="hidden lg:flex px-6 py-2 rounded-md text-lg text-[#ffffff] mr-[-270px]" style="background: linear-gradient(135deg, #1E94EB, #4AB3FF);" href="#">Start Now</a>
+        <!-- DMLM icon -->
+         <i class="fa-regular fa-moon mr-[-270px] text-[30px] cursor-pointer hover:text-[#5F5DFE] text-white ml-[40px]" id="i" onclick="DMLM()"></i>
+        <!-- humburgur menu icon -->
+        <i class="fa-solid fa-bars-staggered lg:hidden text-[30px] cursor-pointer hover:text-[#5F5DFE] ml-[220px] text-white" id="icon" onclick="toggle()"></i>
+        <!-- mobile menu part -->
+         <div>
+            <div class="hidden flex flex-col gap-5 cursor-pointer lg:hidden absolute bg-[#1E1E1E] backdrop-blur-[15px] border-2 border-gray-500 p-5 top-0 right-0 mr-10 mt-36 w-[200px] shadow-xl text-center rounded-md" id="div">
+                <a class="hover:text-[#5F5DFE] text-[#FFFFFF]  text-lg transition font-semibold" href="#">Home</a>
+                <a class="hover:text-[#5F5DFE] text-[#FFFFFF]  text-lg font-semibold" href="#">About</a>
+                <a class="hover:text-[#5F5DFE] text-[#FFFFFF]  text-lg font-semibold" href="#">Projects</a>
+                <a class="hover:text-[#5F5DFE] text-[#FFFFFF]  text-lg font-semibold" href="#">Service</a>
+                <a class="hover:text-[#5F5DFE] text-[#FFFFFF]  text-lg font-semibold" href="#">Contact</a>
+                <!-- MOBILE button -->
+                <a class="px-6 py-2 rounded-md  text-lg text-[#ffffff]  lg:hidden" style="background: linear-gradient(135deg, #1E94EB, #4AB3FF);" href="#">Start Now</a>
+            </div>
+         </div>
+     </div>
+
+     <!-- hero part -->
+      <div class="container lg:flex justify-between items-center px-20 py-20 gap-10">
+        <!-- contant part -->
+        <div class="content mb-10 lg:mb-0">
+            <h1 class="lg:text-7xl text-6xl  font-bold mb-6 leading-tight">
+                <span class="inline-block bg-gradient-to-r from-[#0FFFFF] to-[#007FFF] bg-clip-text text-transparent">
+                Digital <br> Experiences
+                </span>
+                <br>
+                That Drive <br> Impact
+            </h1>
+            <p class="text-lg mb-6">
+                <span class="inline-block bg-gradient-to-r from-[#0FFFFF] to-[#007FFF] bg-clip-text text-transparent">
+                I architect high-performance web applications that blend <br> cutting-edge technology  with intuitive design.</span><br> Specializing in React ecosystems, and scalable backends, <br>  I transform complex problems into elegant solutions.</p>
+            <div class="buttons">
+                <a class="px-6 py-2 rounded-md text-lg text-[#ffffff] mr-6" style="background: linear-gradient(135deg, #1E94EB, #4AB3FF);" href="#">Get Started</a>
+                <a class="border-2 border-gray-500 px-6 py-2 rounded-md text-lg text-[#ffffff]" href="#">View Work</a>
+            </div>
+        </div>
+        <div class="image bg-[#1E1D1D] p-6 rounded-lg border-2 border-gray-700" style="background: radial-gradient(
+            circle at top left,
+            #1E1D1D 0%,
+            #1E1D1D 20%,
+            #131414 50%,
+            #131414 60%,
+            #131414 75%,
+            #131414 90%,
+            #131414 100%
+        );
+        ">
+            <div>
+                <img src="./images/hero.png" alt="heroimage" width="600px">
+                <div class="text-[20px] ml-6 mt-4">
+                    <h3>Haaruun Hassan Nuur</h3>
+                    <p>
+                        <span class="inline-block bg-gradient-to-r from-[#0FFFFF] to-[#007FFF] bg-clip-text text-transparent">
+                        Junior Full-Stack Developer</span></p>
+                </div>
+            </div>
+        </div>
+      </div>
+      <!-- Cards -->
+      <div class="cards w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-6 sm:px-10 lg:px-20 pl-10">
+
+        <div class="card bg-[#1E1E1E] p-6 rounded-lg w-[300px] hover:scale-105 transition border-2 border-gray-700 hover:border-[#2190EA] pr-5 leading-[40px]">
+            <i class="fa-regular fa-user text-[#34D399] text-[40px]"></i>
+            <h2 class="text-[30px] ml-2">1.5+</h2>
+            <p class="text-gray-500 ml-2">Years Experiences</p>
+        </div>
+
+         <div class="card bg-[#1E1E1E] p-6 rounded-lg w-[300px] hover:scale-105 transition border-2 border-gray-700 hover:border-[#2190EA] pr-5 leading-[40px]">
+            <i class="fa-solid fa-list-check text-[#38BDF8] text-[40px]"></i>
+            <h2 class="text-[30px] ml-2">15+</h2>
+            <p class="text-gray-500 ml-2">Project Delivered</p>
+        </div>
+
+         <div class="card bg-[#1E1E1E] p-6 rounded-lg w-[300px] hover:scale-105 transition border-2 border-gray-700 hover:border-[#2190EA] pr-5 leading-[40px]">
+            <i class="fa-solid fa-award text-[#C084FC] text-[40px]"></i>
+            <h2 class="text-[30px] ml-2">3+</h2>
+            <p class="text-gray-500 ml-2">Industry Awards</p>
+        </div>
+
+         <div class="card bg-[#1E1E1E] p-6 rounded-lg w-[300px] hover:scale-105 transition border-2 border-gray-700 hover:border-[#2190EA] pr-5 leading-[40px]">
+            <i class="fa-solid fa-code text-[#FACC15] text-[40px]"></i>
+            <h2 class="text-[30px] ml-2">140k+</h2>
+            <p class="text-gray-500 ml-2">Lines Of Code</p>
+        </div>
+      </div>
+
+        <!-- another cards part -->
+        <div class="container">
+            <div class="text mt-[100px] lg:pl-[70px] lg:pl-10 px-6">
+                <p class="text-[#34D399]">
+                    <i class="fa-solid fa-lines-leaning"></i>
+                    What I Can Offer</p>
+                <h1 class="text-7xl">Creative <br> Engineering <br> Services</h1>
+            </div>
+                <!-- Cards -->
+        <div class="cards w-full grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-6 px-6 sm:px-10 lg:px-20 py-10">
+
+            <div class="card bg-[#1E1E1E] p-6 rounded-lg w-[440px] transition border-2 border-gray-700  pr-5 leading-[40px]">
+                <i class="fa-solid fa-laptop-code text-[#34D399] text-[40px] ml-3"></i>
+                <h2 class="text-[30px] ml-2">Web & App Development</h2>
+                <p class="text-gray-500 ml-2 leading-normal">Building modern web experiences using HTML, CSS, JavaScript, React, Angular & more.</p>
+                <a href="#" class="text-[#34D399] ml-3 hover:underline">View More</a>
+            </div>
+
+             <div class="card bg-[#1E1E1E] p-6 rounded-lg w-[440px] transition border-2 border-gray-700  pr-5 leading-[40px]">
+                <i class="fa-solid fa-database text-[#34D399] text-[40px] ml-3"></i>
+                <h2 class="text-[30px] ml-2">Database Management</h2>
+                <p class="text-gray-500 ml-2 leading-normal">Reliable and efficient data handling with MySQL, MongoDB, PostgreSQL, and Firebase.</p>
+                <a href="#" class="text-[#34D399] ml-3 hover:underline">View More</a>
+            </div>
+
+             <div class="card bg-[#1E1E1E] p-6 rounded-lg w-[440px] transition border-2 border-gray-700  pr-5 leading-[40px]">
+                <i class="fa-solid fa-hexagon-nodes text-[#34D399] text-[40px] ml-3"></i>
+                <h2 class="text-[30px] ml-2">API Development</h2>
+                <p class="text-gray-500 ml-2 leading-normal">Robust backend APIs using Node.js, Express, and REST/GraphQL standards.</p>
+                <a href="#" class="text-[#34D399] ml-3 hover:underline">View More</a>
+            </div>
+
+             <div class="card bg-[#1E1E1E] p-6 rounded-lg w-[440px] transition border-2 border-gray-700  pr-5 leading-[40px]">
+                <i class="fa-solid fa-screwdriver-wrench text-[#34D399] text-[40px] ml-3"></i>
+                <h2 class="text-[30px] ml-2">Performance Optimization</h2>
+                <p class="text-gray-500 ml-2 leading-normal">Speed up your app with next-gen loading, caching, and bundle optimization.</p>
+                <a href="#" class="text-[#34D399] ml-3 hover:underline">View More</a>
+            </div>
+
+             <div class="card bg-[#1E1E1E] p-6 rounded-lg w-[440px] transition border-2 border-gray-700  pr-5 leading-[40px]">
+                <i class="fa-solid fa-cart-shopping text-[#34D399] text-[40px] ml-3"></i>
+                <h2 class="text-[30px] ml-2">E-commerce Solutions</h2>
+                <p class="text-gray-500 ml-2 leading-normal">Developing scalable e-commerce platforms with Stripe, Shopify, Woo & custom flows.</p>
+                <a href="#" class="text-[#34D399] ml-3 hover:underline">View More</a>
+            </div>
+
+             <div class="card bg-[#1E1E1E] p-6 rounded-lg w-[440px] transition border-2 border-gray-700  pr-5 leading-[40px]">
+                <i class="fa-solid fa-handshake-angle text-[#34D399] text-[40px] ml-3"></i>
+                <h2 class="text-[30px] ml-2">Integrating AI</h2>
+                <p class="text-gray-500 ml-2 leading-normal">Automate intelligence into your app: OpenAI, GPT, chatbots, recommendations, and more.</p>
+                <a href="#" class="text-[#34D399] ml-3 hover:underline">View More</a>
+            </div> 
+        </div>
+        </div>
+
+        <!-- projects part -->
+        <div class="projects mt-[50px]">
+            <div class="text pl-[70px] lg:pl-10 px-6">
+                <p class="text-[#34D399] text-3xl">
+                    <i class="fa-solid fa-lines-leaning"></i>
+                     Projects</p>
+                <h1 class="text-6xl">Featured
+                    <span class="inline-block bg-gradient-to-r from-[#0FFFFF] to-[#007FFF] bg-clip-text text-transparent">
+                     Works & Innovations
+                    </span>
+                </h1>
+            </div>
+            <!-- <div class="carousel flex gap-6 overflow-x-auto"> -->
+            <!--project card-->
+            <!-- <div class="project lg:flex items-center px-10 py-10 gap-10 bg-[#1E1E1E] rounded-lg border-2 border-gray-700 mt-10">
+                <div class="image pl-10">
+                    <img class="rounded-lg hover" src="./images/weather.PNG" alt="project1" width="600px">
+                </div>
+                <div class="content pt-10 pl-10">
+                    <h2 class="text-[#34D399] text-5xl mb-3">Weather App</h2>
+                    <p class="text-[#9CA3AF]">I completed a Weather App using HTML, CSS, and JavaScript. It fetches real-time <br> weather data from an API  and displays temperature, humidity, wind speed, <br> and weather conditions with dynamic icons.  The app also shows an error message if a city is not found.</p>
+                    <div class="flex gap-10 my-6">
+                        <div>
+                            <p class="text-[#616774]">client</p>
+                            <p class="text-[#9CA3AF]">Saasify</p>
+                        </div>
+                        <div>
+                            <p class="text-[#616774]">completion time</p>
+                            <p class="text-[#9CA3AF]">3 Hours</p>
+                        </div>
+                    </div>
+                    <h1>Tech Stack Used:</h1>
+                    <div class="tech flex gap-6 mt-3 mb-6">
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">HTML</p>
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">JavaScript</p>
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">API</p>
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">tailwind css</p>
+                    </div>
+                    <div class="buttons flex gap-6">
+                        <a class="bg-black rounded-full text-white border px-4 py-2" title="Github" href="#">View On Github
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a class="bg-[#34D399] px-4 py-2 rounded-full text-black" title="weatherApp" href="weatherApp.htm">Live Demo
+                            <i class="fa-regular fa-eye"></i>
+                        </a>
+                    </div>
+               </div>
+           </div> -->
+
+           <!--project card-->
+            <!-- <div class="project lg:flex items-center px-10 py-10 gap-10 bg-[#1E1E1E] rounded-lg border-2 border-gray-700 mt-10">
+                <div class="image pl-10">
+                    <img class="rounded-lg hover" src="./images/weather.PNG" alt="project1" width="600px">
+                </div>
+                <div class="content pt-10 pl-10">
+                    <h2 class="text-[#34D399] text-5xl mb-3">Calculator App</h2>
+                    <p class="text-[#9CA3AF]">I completed a Weather App using HTML, CSS, and JavaScript. It fetches real-time <br> weather data from an API  and displays temperature, humidity, wind speed, <br> and weather conditions with dynamic icons.  The app also shows an error message if a city is not found.</p>
+                    <div class="flex gap-10 my-6">
+                        <div>
+                            <p class="text-[#616774]">client</p>
+                            <p class="text-[#9CA3AF]">Saasify</p>
+                        </div>
+                        <div>
+                            <p class="text-[#616774]">completion time</p>
+                            <p class="text-[#9CA3AF]">3 Hours</p>
+                        </div>
+                    </div>
+                    <h1>Tech Stack Used:</h1>
+                    <div class="tech flex gap-6 mt-3 mb-6">
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">HTML</p>
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">JavaScript</p>
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">API</p>
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">tailwind css</p>
+                    </div>
+                    <div class="buttons flex gap-6">
+                        <a class="bg-black rounded-full text-white border px-4 py-2" title="Github" href="#">View On Github
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a class="bg-[#34D399] px-4 py-2 rounded-full text-black" title="weatherApp" href="weatherApp.htm">Live Demo
+                            <i class="fa-regular fa-eye"></i>
+                        </a>
+                    </div>
+               </div>
+           </div> -->
+
+           <!--project card-->
+            <!-- <div class="project lg:flex items-center px-10 py-10 gap-10 bg-[#1E1E1E] rounded-lg border-2 border-gray-700 mt-10">
+                <div class="image pl-10">
+                    <img class="rounded-lg hover" src="./images/weather.PNG" alt="project1" width="600px">
+                </div>
+                <div class="content pt-10 pl-10">
+                    <h2 class="text-[#34D399] text-5xl mb-3">Recipe applications</h2>
+                    <p class="text-[#9CA3AF]">I completed a Weather App using HTML, CSS, and JavaScript. It fetches real-time <br> weather data from an API  and displays temperature, humidity, wind speed, <br> and weather conditions with dynamic icons.  The app also shows an error message if a city is not found.</p>
+                    <div class="flex gap-10 my-6">
+                        <div>
+                            <p class="text-[#616774]">client</p>
+                            <p class="text-[#9CA3AF]">Saasify</p>
+                        </div>
+                        <div>
+                            <p class="text-[#616774]">completion time</p>
+                            <p class="text-[#9CA3AF]">3 Hours</p>
+                        </div>
+                    </div>
+                    <h1>Tech Stack Used:</h1>
+                    <div class="tech flex gap-6 mt-3 mb-6">
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">HTML</p>
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">JavaScript</p>
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">API</p>
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">tailwind css</p>
+                    </div>
+                    <div class="buttons flex gap-6">
+                        <a class="bg-black rounded-full text-white border px-4 py-2" title="Github" href="#">View On Github
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a class="bg-[#34D399] px-4 py-2 rounded-full text-black" title="weatherApp" href="weatherApp.htm">Live Demo
+                            <i class="fa-regular fa-eye"></i>
+                        </a>
+                    </div>
+               </div>
+           </div> -->
+<!-- </div> -->
+
+        </div>
+
+        <!-- provided featured projects part using bootstrap -->
+
+        <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false" data-bs-interval="false">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                <div class="project lg:flex items-center px-10 py-10 gap-10 bg-[#1E1E1E] rounded-lg border-2 border-gray-700 mt-10">
+                <div class="image pl-10">
+                    <img class="rounded-lg hover" src="./images/humberger.PNG" alt="project1" width="600px">
+                </div>
+                <div class="content pt-10 pl-10">
+                    <h2 class="text-[#34D399] text-5xl mb-3">a responsive navigation bar</h2>
+                    <p class="text-[#9CA3AF]">I created a responsive navigation bar with a hamburger menu using HTML, Tailwind CSS, and JavaScript. On larger screens, the full menu is displayed, while on smaller screens the menu collapses into a mobile-friendly hamburger icon. JavaScript is used to toggle the open/close state smoothly, making the layout fully responsive and easy to use.</p>
+                    <div class="flex gap-10 my-6">
+                        <div>
+                            <p class="text-[#616774]">client</p>
+                            <p class="text-[#9CA3AF]">Not specifyied</p>
+                        </div>
+                        <div>
+                            <p class="text-[#616774]">completion time</p>
+                            <p class="text-[#9CA3AF]">4 Hours</p>
+                        </div>
+                    </div>
+                    <h1>Tech Stack Used:</h1>
+                    <div class="tech flex gap-6 mt-3 mb-6">
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">HTML</p>
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">CSS</p>
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">JavaScript</p>
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">tailwind css</p>
+                    </div>
+                    <div class="buttons flex gap-6">
+                        <a class="bg-black rounded-full text-white border px-4 py-2" title="Github" href="#">View On Github
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a class="bg-[#34D399] px-4 py-2 rounded-full text-black" title="weatherApp" href="HumbergurMenu.html">Live Demo
+                            <i class="fa-regular fa-eye"></i>
+                        </a>
+                    </div>
+               </div>
+           </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="project lg:flex items-center px-10 py-10 gap-10 bg-[#1E1E1E] rounded-lg border-2 border-gray-700 mt-10">
+                <div class="image pl-10">
+                    <img class="rounded-lg hover" src="./images/Darkmode.PNG" alt="project1" width="600px">
+                </div>
+                <div class="content pt-10 pl-10">
+                    <h2 class="text-[#34D399] text-5xl mb-3">a Dark Mode & Light Mode</h2>
+                    <p class="text-[#9CA3AF]">I created a Dark Mode and Light Mode Toggle using HTML, Tailwind CSS, and JavaScript. The project allows users to switch between themes with a single button. It updates the UI dynamically by changing classes and button styles, demonstrating interactive design and basic DOM manipulation.</p>
+                    <div class="flex gap-10 my-6">
+                        <div>
+                            <p class="text-[#616774]">client</p>
+                            <p class="text-[#9CA3AF]">Not specifyied</p>
+                        </div>
+                        <div>
+                            <p class="text-[#616774]">completion time</p>
+                            <p class="text-[#9CA3AF]">1 Hours</p>
+                        </div>
+                    </div>
+                    <h1>Tech Stack Used:</h1>
+                    <div class="tech flex gap-6 mt-3 mb-6">
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">HTML</p>
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">JavaScript</p>
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">tailwind css</p>
+                    </div>
+                    <div class="buttons flex gap-6">
+                        <a class="bg-black rounded-full text-white border px-4 py-2" title="Github" href="#">View On Github
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a class="bg-[#34D399] px-4 py-2 rounded-full text-black" title="weatherApp" href="Darkmode.html">Live Demo
+                            <i class="fa-regular fa-eye"></i>
+                        </a>
+                    </div>
+               </div>
+                </div>
+                </div>
+                <div class="carousel-item">
+                <div class="project lg:flex items-center px-10 py-10 gap-10 bg-[#1E1E1E] rounded-lg border-2 border-gray-700 mt-10">
+                <div class="image pl-10">
+                    <img class="rounded-lg hover" src="./images/calculator.PNG" alt="project1" width="600px">
+                </div>
+                <div class="content pt-10 pl-10">
+                    <h2 class="text-[#34D399] text-5xl mb-3">a simple Calculator </h2>
+                    <p class="text-[#9CA3AF]">I created a simple Calculator using HTML, CSS, and JavaScript. It can perform basic operations like addition, subtraction, multiplication, and division. The design is clean, and the buttons update the display in real time. I also added error handling and an “AC” button to clear the screen.</p>
+                    <div class="flex gap-10 my-6">
+                        <div>
+                            <p class="text-[#616774]">client</p>
+                            <p class="text-[#9CA3AF]">Not specifyied</p>
+                        </div>
+                        <div>
+                            <p class="text-[#616774]">completion time</p>
+                            <p class="text-[#9CA3AF]">5 Hours</p>
+                        </div>
+                    </div>
+                    <h1>Tech Stack Used:</h1>
+                    <div class="tech flex gap-6 mt-3 mb-6">
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">HTML</p>
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">JavaScript</p>
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">tailwind css</p>
+                    </div>
+                    <div class="buttons flex gap-6">
+                        <a class="bg-black rounded-full text-white border px-4 py-2" title="Github" href="#">View On Github
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a class="bg-[#34D399] px-4 py-2 rounded-full text-black" title="weatherApp" href="calculator.html">Live Demo
+                            <i class="fa-regular fa-eye"></i>
+                        </a>
+                    </div>
+               </div>
+           </div>
+                </div>
+                <div class="carousel-item">
+                <div class="project lg:flex items-center px-10 py-10 gap-10 bg-[#1E1E1E] rounded-lg border-2 border-gray-700 mt-10">
+                <div class="image pl-10">
+                    <img class="rounded-lg hover" src="./images/texttospeach.PNG" alt="project1" width="600px">
+                </div>
+                <div class="content pt-10 pl-10">
+                    <h2 class="text-[#34D399] text-5xl mb-3">a Text-to-Speech</h2>
+                    <p class="text-[#9CA3AF]">I developed a Text-to-Speech Web App using HTML, CSS (Tailwind), and JavaScript. The app allows users to type text and converts it into spoken words using the browser’s speech synthesis API. It demonstrates interactive UI and practical use of web APIs for accessibility and user engagement.</p>
+                    <div class="flex gap-10 my-6">
+                        <div>
+                            <p class="text-[#616774]">client</p>
+                            <p class="text-[#9CA3AF]">Not specified</p>
+                        </div>
+                        <div>
+                            <p class="text-[#616774]">completion time</p>
+                            <p class="text-[#9CA3AF]">1.3+ Hours</p>
+                        </div>
+                    </div>
+                    <h1>Tech Stack Used:</h1>
+                    <div class="tech flex gap-6 mt-3 mb-6">
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">HTML</p>
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">JavaScript</p>
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">API</p>
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">tailwind css</p>
+                    </div>
+                    <div class="buttons flex gap-6">
+                        <a class="bg-black rounded-full text-white border px-4 py-2" title="Github" href="#">View On Github
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a class="bg-[#34D399] px-4 py-2 rounded-full text-black" title="weatherApp" href="TextToSpeach.html">Live Demo
+                            <i class="fa-regular fa-eye"></i>
+                        </a>
+                    </div>
+               </div>
+           </div>
+                </div>
+                <div class="carousel-item">
+                <div class="project lg:flex items-center px-10 py-10 gap-10 bg-[#1E1E1E] rounded-lg border-2 border-gray-700 mt-10">
+                <div class="image pl-10">
+                    <img class="rounded-lg hover" src="./images/Recipe.PNG" alt="project1" width="600px">
+                </div>
+                <div class="content pt-10 pl-10">
+                    <h2 class="text-[#34D399] text-5xl mb-3">Recipe applications</h2>
+                    <p class="text-[#9CA3AF]">I developed a Recipe Application using HTML, CSS (Tailwind), and JavaScript. The app fetches real recipe data from an API and displays dishes with images, ratings, ingredients, cooking time, and instructions. It also includes a detailed recipe page that loads dynamically based on the selected item. The project focuses on clean UI design, responsive layout, and smooth data handling using async JavaScript.</p>
+                    <div class="flex gap-10 my-6">
+                        <div>
+                            <p class="text-[#616774]">client</p>
+                            <p class="text-[#9CA3AF]">Not specified</p>
+                        </div>
+                        <div>
+                            <p class="text-[#616774]">completion time</p>
+                            <p class="text-[#9CA3AF]">11+ Hours</p>
+                        </div>
+                    </div>
+                    <h1>Tech Stack Used:</h1>
+                    <div class="tech flex gap-6 mt-3 mb-6">
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">HTML</p>
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">JavaScript</p>
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">API</p>
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">tailwind css</p>
+                    </div>
+                    <div class="buttons flex gap-6">
+                        <a class="bg-black rounded-full text-white border px-4 py-2" title="Github" href="#">View On Github
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a class="bg-[#34D399] px-4 py-2 rounded-full text-black" title="weatherApp" href="product.html">Live Demo
+                            <i class="fa-regular fa-eye"></i>
+                        </a>
+                    </div>
+               </div>
+           </div>
+                </div>
+                <div class="carousel-item">
+                <div class="project lg:flex items-center px-10 py-10 gap-10 bg-[#1E1E1E] rounded-lg border-2 border-gray-700 mt-10">
+                <div class="image pl-10">
+                    <img class="rounded-lg hover" src="./images/weatherlast.PNG" alt="project1" width="600px">
+                </div>
+                <div class="content pt-10 pl-10">
+                    <h2 class="text-[#34D399] text-5xl mb-3">a Weather App</h2>
+                    <p class="text-[#9CA3AF]">I completed a Weather App using HTML, CSS, and JavaScript. It fetches real-time <br> weather data from an API  and displays temperature, humidity, wind speed, <br> and weather conditions with dynamic icons.  The app also shows an error message if a city is not found.</p>
+                    <div class="flex gap-10 my-6">
+                        <div>
+                            <p class="text-[#616774]">client</p>
+                            <p class="text-[#9CA3AF]">Not specifyied</p>
+                        </div>
+                        <div>
+                            <p class="text-[#616774]">completion time</p>
+                            <p class="text-[#9CA3AF]">3 Hours</p>
+                        </div>
+                    </div>
+                    <h1>Tech Stack Used:</h1>
+                    <div class="tech flex gap-6 mt-3 mb-6">
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">HTML</p>
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">JavaScript</p>
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">API</p>
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">tailwind css</p>
+                    </div>
+                    <div class="buttons flex gap-6">
+                        <a class="bg-black rounded-full text-white border px-4 py-2" title="Github" href="#">View On Github
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a class="bg-[#34D399] px-4 py-2 rounded-full text-black" title="weatherApp" href="weatherApp.htm">Live Demo
+                            <i class="fa-regular fa-eye"></i>
+                        </a>
+                    </div>
+               </div>
+           </div>
+                </div>
+                <div class="carousel-item">
+                <div class="project lg:flex items-center px-10 py-10 gap-10 bg-[#1E1E1E] rounded-lg border-2 border-gray-700 mt-10">
+                <div class="image pl-10">
+                    <img class="rounded-lg hover" src="./images/countdown.PNG" alt="project1" width="600px">
+                </div>
+                <div class="content pt-10 pl-10">
+                    <h2 class="text-[#34D399] text-5xl mb-3">a Countdown Clock</h2>
+                    <p class="text-[#9CA3AF]">I made a Countdown Clock using HTML, CSS, and JavaScript.  The timer shows the days, the hours,  the minutes and seconds on the screen and decreases until it reaches zero.</p>
+                    <div class="flex gap-10 my-6">
+                        <div>
+                            <p class="text-[#616774]">client</p>
+                            <p class="text-[#9CA3AF]">Not specified</p>
+                        </div>
+                        <div>
+                            <p class="text-[#616774]">completion time</p>
+                            <p class="text-[#9CA3AF]">1 Hours</p>
+                        </div>
+                    </div>
+                    <h1>Tech Stack Used:</h1>
+                    <div class="tech flex gap-6 mt-3 mb-6">
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">HTML</p>
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">JavaScript</p>
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">tailwind css</p>
+                    </div>
+                    <div class="buttons flex gap-6">
+                        <a class="bg-black rounded-full text-white border px-4 py-2" title="Github" href="#">View On Github
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a class="bg-[#34D399] px-4 py-2 rounded-full text-black" title="weatherApp" href="countdown.html">Live Demo
+                            <i class="fa-regular fa-eye"></i>
+                        </a>
+                    </div>
+               </div>
+           </div>
+                </div>
+                <div class="carousel-item">
+                <div class="project lg:flex items-center px-10 py-10 gap-10 bg-[#1E1E1E] rounded-lg border-2 border-gray-700 mt-10">
+                <div class="image pl-10">
+                    <img class="rounded-lg hover" src="./images/clock.PNG" alt="project1" width="600px">
+                </div>
+                <div class="content pt-10 pl-10">
+                    <h2 class="text-[#34D399] text-5xl mb-3">Digital Clock</h2>
+                    <p class="text-[#9CA3AF]">I completed a Digital Clock project using HTML, CSS, and JavaScript. It displays the current time in real-time, and I designed it with a clean and simple interface. This project helped me improve my front-end development skills.</p>
+                    <div class="flex gap-10 my-6">
+                        <div>
+                            <p class="text-[#616774]">client</p>
+                            <p class="text-[#9CA3AF]">Not specifyied</p>
+                        </div>
+                        <div>
+                            <p class="text-[#616774]">completion time</p>
+                            <p class="text-[#9CA3AF]">1 Hours</p>
+                        </div>
+                    </div>
+                    <h1>Tech Stack Used:</h1>
+                    <div class="tech flex gap-6 mt-3 mb-6">
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">HTML</p>
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">JavaScript</p>
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">tailwind css</p>
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">UIverce.Elements</p>
+                    </div>
+                    <div class="buttons flex gap-6">
+                        <a class="bg-black rounded-full text-white border px-4 py-2" title="Github" href="#">View On Github
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a class="bg-[#34D399] px-4 py-2 rounded-full text-black" title="weatherApp" href="clock.html">Live Demo
+                            <i class="fa-regular fa-eye"></i>
+                        </a>
+                    </div>
+               </div>
+           </div>
+                </div>
+                <div class="carousel-item">
+                <div class="project lg:flex items-center px-10 py-10 gap-10 bg-[#1E1E1E] rounded-lg border-2 border-gray-700 mt-10">
+                <div class="image pl-10">
+                    <img class="rounded-lg hover" src="./images/formvalidation.PNG" alt="project1" width="600px">
+                </div>
+                <div class="content pt-10 pl-10">
+                    <h2 class="text-[#34D399] text-5xl mb-3">Form Validation</h2>
+                    <p class="text-[#9CA3AF]">I Completed My Project "Form Validation", That Validates The Form By Entering Correct Data Using HTML CSS and Javascript.</p>
+                    <div class="flex gap-10 my-6">
+                        <div>
+                            <p class="text-[#616774]">client</p>
+                            <p class="text-[#9CA3AF]">Not specifyied</p>
+                        </div>
+                        <div>
+                            <p class="text-[#616774]">completion time</p>
+                            <p class="text-[#9CA3AF]">7 Hours</p>
+                        </div>
+                    </div>
+                    <h1>Tech Stack Used:</h1>
+                    <div class="tech flex gap-6 mt-3 mb-6">
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">HTML</p>
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">JavaScript</p>
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">CSS</p>
+                    </div>
+                    <div class="buttons flex gap-6">
+                        <a class="bg-black rounded-full text-white border px-4 py-2" title="Github" href="#">View On Github
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a class="bg-[#34D399] px-4 py-2 rounded-full text-black" title="weatherApp" href="formvalidation.html">Live Demo
+                            <i class="fa-regular fa-eye"></i>
+                        </a>
+                    </div>
+               </div>
+           </div>
+                </div>
+                <div class="carousel-item">
+                <div class="project lg:flex items-center px-10 py-10 gap-10 bg-[#1E1E1E] rounded-lg border-2 border-gray-700 mt-10">
+                <div class="image pl-10">
+                    <img class="rounded-lg hover" src="./images/slider.PNG" alt="project1" width="600px">
+                </div>
+                <div class="content pt-10 pl-10">
+                    <h2 class="text-[#34D399] text-5xl mb-3">Carousel </h2>
+                    <p class="text-[#9CA3AF]">I completed a Slider App using HTML, CSS, and JavaScript. and it is have two icons left/right when clicks given next image and is very helpful</p>
+                    <div class="flex gap-10 my-6">
+                        <div>
+                            <p class="text-[#616774]">client</p>
+                            <p class="text-[#9CA3AF]">Not specified</p>
+                        </div>
+                        <div>
+                            <p class="text-[#616774]">completion time</p>
+                            <p class="text-[#9CA3AF]">30 Minutes</p>
+                        </div>
+                    </div>
+                    <h1>Tech Stack Used:</h1>
+                    <div class="tech flex gap-6 mt-3 mb-6">
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">HTML</p>
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">JavaScript</p>
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">css</p>
+                    </div>
+                    <div class="buttons flex gap-6">
+                        <a class="bg-black rounded-full text-white border px-4 py-2" title="Github" href="#">View On Github
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a class="bg-[#34D399] px-4 py-2 rounded-full text-black" title="weatherApp" href="carousel.htm">Live Demo
+                            <i class="fa-regular fa-eye"></i>
+                        </a>
+                    </div>
+               </div>
+           </div>
+                </div>
+                <div class="carousel-item">
+                <div class="project lg:flex items-center px-10 py-10 gap-10 bg-[#1E1E1E] rounded-lg border-2 border-gray-700 mt-10">
+                <div class="image pl-10">
+                    <img class="rounded-lg hover" src="./images/counter.PNG" alt="project1" width="600px">
+                </div>
+                <div class="content pt-10 pl-10">
+                    <h2 class="text-[#34D399] text-5xl mb-3">A Counter </h2>
+                    <p class="text-[#9CA3AF]">I completed a Counter using HTML, CSS, and JavaScript. and it is have Three buttos increase that adds one to number Descrease and cuts number by 1 and reset that reset the number to 0.</p>
+                    <div class="flex gap-10 my-6">
+                        <div>
+                            <p class="text-[#616774]">client</p>
+                            <p class="text-[#9CA3AF]">Not specified</p>
+                        </div>
+                        <div>
+                            <p class="text-[#616774]">completion time</p>
+                            <p class="text-[#9CA3AF]">30+ Minutes</p>
+                        </div>
+                    </div>
+                    <h1>Tech Stack Used:</h1>
+                    <div class="tech flex gap-6 mt-3 mb-6">
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">HTML</p>
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">JavaScript</p>
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">css</p>
+                    </div>
+                    <div class="buttons flex gap-6">
+                        <a class="bg-black rounded-full text-white border px-4 py-2" title="Github" href="#">View On Github
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a class="bg-[#34D399] px-4 py-2 rounded-full text-black" title="weatherApp" href="counter.html">Live Demo
+                            <i class="fa-regular fa-eye"></i>
+                        </a>
+                    </div>
+               </div>
+           </div>
+                </div>
+                <div class="carousel-item">
+                <div class="project lg:flex items-center px-10 py-10 gap-10 bg-[#1E1E1E] rounded-lg border-2 border-gray-700 mt-10">
+                <div class="image pl-10">
+                    <img class="rounded-lg hover" src="./images/passwordG.PNG" alt="project1" width="600px">
+                </div>
+                <div class="content pt-10 pl-10">
+                    <h2 class="text-[#34D399] text-5xl mb-3">Password Generator</h2>
+                    <p class="text-[#9CA3AF]">I created a Password Generator using HTML, Tailwind CSS, and JavaScript. The app generates strong random passwords using a combination of letters, numbers, and symbols. It also includes a copy-to-clipboard feature with a small confirmation message. This project demonstrates DOM manipulation, randomization logic, and a clean UI design.</p>
+                    <div class="flex gap-10 my-6">
+                        <div>
+                            <p class="text-[#616774]">client</p>
+                            <p class="text-[#9CA3AF]">Not specified</p>
+                        </div>
+                        <div>
+                            <p class="text-[#616774]">completion time</p>
+                            <p class="text-[#9CA3AF]">2 hours</p>
+                        </div>
+                    </div>
+                    <h1>Tech Stack Used:</h1>
+                    <div class="tech flex gap-6 mt-3 mb-6">
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">HTML</p>
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">JavaScript</p>
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">css</p>
+                    </div>
+                    <div class="buttons flex gap-6">
+                        <a class="bg-black rounded-full text-white border px-4 py-2" title="Github" href="#">View On Github
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a class="bg-[#34D399] px-4 py-2 rounded-full text-black" title="weatherApp" href="passwordG.html">Live Demo
+                            <i class="fa-regular fa-eye"></i>
+                        </a>
+                    </div>
+               </div>
+           </div>
+                </div>
+                <div class="carousel-item">
+                <div class="project lg:flex items-center px-10 py-10 gap-10 bg-[#1E1E1E] rounded-lg border-2 border-gray-700 mt-10">
+                <div class="image pl-10">
+                    <img class="rounded-lg hover" src="./images/todolist.PNG" alt="project1" width="600px">
+                </div>
+                <div class="content pt-10 pl-10">
+                    <h2 class="text-[#34D399] text-5xl mb-3">a To-Do List </h2>
+                    <p class="text-[#9CA3AF]">I created a To-Do List application using HTML, Tailwind CSS, and JavaScript. It allows users to add tasks, mark them as completed with a checkbox, and delete them when finished. This project helped me practice DOM manipulation, dynamic element creation, and clean UI design.</p>
+                    <div class="flex gap-10 my-6">
+                        <div>
+                            <p class="text-[#616774]">client</p>
+                            <p class="text-[#9CA3AF]">Not specified</p>
+                        </div>
+                        <div>
+                            <p class="text-[#616774]">completion time</p>
+                            <p class="text-[#9CA3AF]">6+ Hours</p>
+                        </div>
+                    </div>
+                    <h1>Tech Stack Used:</h1>
+                    <div class="tech flex gap-6 mt-3 mb-6">
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">HTML</p>
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">JavaScript</p>
+                        <p class="jsx-90d6ab40ab1efa44 bg-white/10 text-white px-3 py-1 rounded-full text-xs border border-white/20">Tailwind CSS</p>
+                    </div>
+                    <div class="buttons flex gap-6">
+                        <a class="bg-black rounded-full text-white border px-4 py-2" title="Github" href="#">View On Github
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a class="bg-[#34D399] px-4 py-2 rounded-full text-black" title="weatherApp" href="to-do-list.html">Live Demo
+                            <i class="fa-regular fa-eye"></i>
+                        </a>
+                    </div>
+               </div>
+           </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+            </div>
+
+         <!-- profied featured projects can be added here -->
+          <div class="container pl-10 pb-10">
+            <div class="text text-center mt-[100px] lg:pl-[70px] lg:pl-10 px-6">
+                <h1 class="text-5xl mb-5">
+                    <span class="inline-block bg-gradient-to-r from-[#0FFFFF] to-[#007FFF] bg-clip-text text-transparent">
+                    My Provided Features</span></h1>
+                <p>Explore the creative, technical, and powerful digital services I deliver to turn your vision into reality.</p>
+            </div>
+                       <!-- Cards -->
+        <div class="cards w-full grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-6 px-6 sm:px-10 lg:px-20 py-10">
+
+            <div class="card bg-[#1E1E1E] p-6 rounded-lg w-[340px] hover:scale-105 transition border-2 border-[#97366A]  pr-5 leading-[40px] text-center">
+                <i class="fa-brands fa-cc-discover text-[#34D399] text-[40px] ml-3"></i>
+                <h2 class="text-[25px] ml-2">Web & App Development</h2>
+                <p class="text-gray-500 ml-2 leading-normal text-sm mb-2">Responsive, fast, accessible websites built with modern frameworks like React, Next.js, and Tailwind CSS.</p>
+                <a href="#" class="ml-3 px-10 py-2 rounded-full bg-gradient-to-r from-[#AC54F1] to-[#E7499F]">Read More
+                    <i class="fa-solid fa-arrow-right-long"></i>
+                </a>
+            </div>
+
+            <div class="card bg-[#1E1E1E] p-6 rounded-lg w-[340px] hover:scale-105 transition border-2 border-[#97366A]  pr-5 leading-[40px] text-center">
+                <i class="fa-solid fa-palette text-[#34D399] text-[40px] ml-3"></i>
+                <h2 class="text-[25px] ml-2">UI/UX Design</h2>
+                <p class="text-gray-500 ml-2 leading-normal text-sm mb-2">Clean and intuitive interface designs with a focus on user experience, usability, and conversion.</p>
+                <a href="#" class="ml-3 px-10 py-2 rounded-full bg-gradient-to-r from-[#AC54F1] to-[#E7499F]">Read More
+                    <i class="fa-solid fa-arrow-right-long"></i>
+                </a>
+            </div>
+
+            <div class="card bg-[#1E1E1E] p-6 rounded-lg w-[340px] hover:scale-105 transition border-2 border-[#97366A]  pr-5 leading-[40px] text-center">
+                <i class="fa-solid fa-server text-[#34D399] text-[40px] ml-3"></i>
+                <h2 class="text-[25px] ml-2">Backend Development</h2>
+                <p class="text-gray-500 ml-2 leading-normal text-sm mb-2">Robust backend systems using Node.js, Express, Go, or C#/.NET with SQL or NoSQL databases.</p>
+                <a href="#" class="ml-3 px-10 py-2 rounded-full bg-gradient-to-r from-[#AC54F1] to-[#E7499F]">Read More
+                    <i class="fa-solid fa-arrow-right-long"></i>
+                </a>
+            </div>
+
+            <div class="card bg-[#1E1E1E] p-6 rounded-lg w-[340px] hover:scale-105 transition border-2 border-[#97366A]  pr-5 leading-[40px] text-center">
+                <i class="fa-solid fa-bezier-curve text-[#34D399] text-[40px] ml-3"></i>
+                <h2 class="text-[25px] ml-2">API Integration</h2>
+                <p class="text-gray-500 ml-2 leading-normal text-sm mb-2">RESTful and GraphQL APIs, third-party service integrations like Stripe, Maps, and OpenAI.</p>
+                <a href="#" class="ml-3 px-10 py-2 rounded-full bg-gradient-to-r from-[#AC54F1] to-[#E7499F]">Read More
+                    <i class="fa-solid fa-arrow-right-long"></i>
+                </a>
+            </div>
+
+            <div class="card bg-[#1E1E1E] p-6 rounded-lg w-[340px] hover:scale-105 transition border-2 border-[#97366A]  pr-5 leading-[40px] text-center">
+                <i class="fa-brands fa-wordpress text-[#34D399] text-[40px] ml-3"></i>
+                <h2 class="text-[25px] ml-2">CMS & WordPress</h2>
+                <p class="text-gray-500 ml-2 leading-normal text-sm mb-2">Custom WordPress themes or headless CMS solutions like Sanity.io and Contentful.</p>
+                <a href="#" class="ml-3 px-10 py-2 rounded-full bg-gradient-to-r from-[#AC54F1] to-[#E7499F]">Read More
+                    <i class="fa-solid fa-arrow-right-long"></i>
+                </a>
+            </div>
+
+            <div class="card bg-[#1E1E1E] p-6 rounded-lg w-[340px] hover:scale-105 transition border-2 border-[#97366A]  pr-5 leading-[40px] text-center">
+                <i class="fa-solid fa-robot text-[#34D399] text-[40px] ml-3"></i>
+                <h2 class="text-[25px] ml-2">AI/ML Integration</h2>
+                <p class="text-gray-500 ml-2 leading-normal text-sm mb-2">Smart features powered by OpenAI, TensorFlow, or Azure AI — like chatbots, analysis, and personalization.</p>
+                <a href="#" class="ml-3 px-10 py-2 rounded-full bg-gradient-to-r from-[#AC54F1] to-[#E7499F]">Read More
+                    <i class="fa-solid fa-arrow-right-long"></i>
+                </a>
+            </div>
+            
+        </div>
+          </div>
+
+          <!-- technical skills part -->
+          <div class="container pb-10">
+            <div class="text text-center mt-[30px] lg:pl-[70px] lg:pl-10 px-6">
+                <h1 class="text-5xl font-semibold">
+                    <span class="inline-block bg-gradient-to-r from-[#0FFFFF] to-[#007FFF] bg-clip-text text-transparent">
+                    Technical Skills </span></h1>
+            </div>
+            <div class="cards grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-4 gap-6 px-6 sm:px-10 lg:px-20 py-5">
+
+                <div class="card w-[340px] bg-[#1E1E1E] p-6 rounded-lg mx-auto mt-10 border-2 border-gray-700 px-[60px]">
+                    <h1 class="text-center text-3xl mb-3">Front-End</h1>
+                    <hr class="w-[100%] mx-auto border-gray-600">
+                    <div class="icons grid grid-cols-3 leading-[30px] text-center gap-6 mt-5">
+                        <div>
+                            <i class="fa-brands fa-html5 text-[40px] text-[#E34F26]"></i>
+                            <p>HTML 5</p>
+                        </div>
+                        <div>
+                            <i class="fa-brands fa-css3-alt text-[40px] text-[#1572B6]"></i>
+                            <p>CSS 3</p>
+                        </div>
+                        <div>
+                            <i class="fa-brands fa-js text-[40px] text-[#F7DF1E]"></i>
+                            <p>JavaScript</p>
+                        </div>
+                        <div>
+                            <i class="fa-brands fa-react text-[40px] text-[#61DAFB]"></i>
+                            <p>React</p>
+                        </div>
+                        <div>
+                            <i class="fa-brands fa-bootstrap text-[40px] text-[#6CC24A]"></i>
+                            <p>Bootstrap</p>
+                        </div>
+                        <div>
+                            <img src="https://cdn.simpleicons.org/tailwindcss/38BDF8" width="40" class="mx-auto">
+                            <p>TailwindCSS</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card w-[340px] bg-[#1E1E1E] p-6 rounded-lg mx-auto mt-10 border-2 border-gray-700 px-[60px]">
+                    <h1 class="text-center text-3xl mb-3">Back-End</h1>
+                    <hr class="w-[100%] mx-auto border-gray-600">
+                    <div class="icons grid grid-cols-3 leading-[30px] text-center gap-6 mt-5">
+                        <div>
+                            <img src="https://cdn.simpleicons.org/node.js/6CC24A" width="40" class="mx-auto">
+                            <p>Node.js</p>
+                        </div>
+                        <div>
+                            <img src="https://cdn.simpleicons.org/express/FFFFFF" width="40" class="mx-auto">
+                            <p>Express.js</p>
+                        </div>
+                        <div>
+                            <img src="https://cdn.simpleicons.org/dotnet/512BD4" width="40" class="mx-auto">
+                            <p>.NET</p>
+                        </div>
+                        <div>
+                            <img src="https://cdn.simpleicons.org/mysql/4479A1" width="40" class="mx-auto">
+                            <p>MySQL</p>
+                        </div>
+                        <div>
+                            <img src="https://cdn.simpleicons.org/postgresql/4169E1" width="40" class="mx-auto">
+                            <p>PostgreSQL</p>
+                        </div>
+                        <div>
+                            <img src="https://cdn.simpleicons.org/mongodb/47A248" width="40" class="mx-auto">
+                            <p>MongoDB</p>
+                        </div>
+                        <div>
+                            <img src="https://cdn.simpleicons.org/firebase/FFCA28" width="40" class="mx-auto">
+                            <p>Firebase</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card w-[340px] bg-[#1E1E1E] p-6 rounded-lg mx-auto mt-10 border-2 border-gray-700 px-[60px]">
+                    <h1 class="text-center text-3xl mb-3">Tools</h1>
+                    <hr class="w-[100%] mx-auto border-gray-600">
+                    <div class="icons grid grid-cols-3 leading-[30px] text-center gap-6 mt-5">
+                        <div>
+                            <img src="https://cdn.simpleicons.org/postman/FF6C37" width="40" class="mx-auto">
+                            <p>Postman</p>
+                        </div>
+                        <div>
+                            <img src="https://cdn.simpleicons.org/figma/F24E1E" width="40" class="mx-auto">
+                            <p>Figma</p>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-code text-[40px] text-[#007ACC]"></i>
+                            <p>VSCode</p>
+                        </div>
+                        <div>
+                            <img src="https://cdn.simpleicons.org/notion/FFFFFF" width="40" class="mx-auto invert">
+                            <p>Notion</p>
+                        </div>
+                        <div>
+                            <img src="https://cdn.simpleicons.org/vercel/FFFFFF" width="40" class="mx-auto">
+                            <p>Vercel</p>
+                        </div>
+                        <div>
+                            <i class="fa-brands fa-slack text-[40px] text-[#4A154B]"></i>
+                            <p>Slack</p>
+                        </div>
+                        <div>
+                            <i class="fa-brands fa-git-alt text-[40px] text-[#F05032]"></i>
+                            <p>Git</p>
+                        </div>
+                        <div>
+                            <i class="fa-brands fa-github text-[40px] text-white"></i>
+                            <p>GitHub</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card w-[340px] bg-[#1E1E1E] p-6 rounded-lg mx-auto mt-10 border-2 border-gray-700 px-[60px]">
+                    <h1 class="text-center text-3xl mb-3">Web-Designer</h1>
+                    <hr class="w-[100%] mx-auto border-gray-600">
+                    <div class="icons grid grid-cols-3 leading-[30px] text-center gap-6 mt-5">
+                        <div>
+                            <i class="fa-brands fa-html5 text-[40px] text-[#E34F26]"></i>
+                            <p>HTML 5</p>
+                        </div>
+                        <div>
+                            <i class="fa-brands fa-css3-alt text-[40px] text-[#1572B6]"></i>
+                            <p>CSS 3</p>
+                        </div>
+                        <div>
+                            <img src="https://cdn.simpleicons.org/figma/F24E1E" width="40" class="mx-auto">
+                            <p>Figma</p>
+                        </div>
+                      <!-- Photoshop (SVGRepo) -->
+                        <div>
+                        <img src="https://www.svgrepo.com/show/41189/adobe-photoshop-logo.svg"
+                            width="40" class="mx-auto" alt="Photoshop">
+                        <p>Photoshop</p>
+                        </div>
+                        <!-- Illustrator (SVGRepo) -->
+                        <div>
+                        <img src="https://www.svgrepo.com/show/452147/adobe-illustrator.svg"
+                            width="40" class="mx-auto" alt="Illustrator">
+                        <p>Illustrator</p>
+                        </div>
+                        <div>
+                            <img src="https://cdn.simpleicons.org/canva/00C4CC" width="40" class="mx-auto">
+                            <p>Canva</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+          </div>
+
+          <!-- Contact part can be added here -->
+           <div class="contact w-full bg-[#1E1E1E] p-10 lg:px-20 mt-10 lg:mt-20 lg:flex justify-between gap-10 px-6 flex flex-col justify-center items-center">
+                <div class="text mb-5 w-full">
+                    <h1 class="text-center text-5xl mb-2 text-[#E7499F] font-semibold">Let's Collaborate</h1>
+                    <p class="text-sm text-center">Whether you’re looking to start a project, have a question, or just want to say hi — my inbox is always open.</p>
+                </div>
+                <form action="#" class="flex flex-col gap-4 lg:w-[500px] w-full">
+                    <label class="text-2xl" for="name">Name</label>
+                    <input class="rounded-lg py-2 pl-4 bg-black border-2 border-[#AC54F1]" type="text" placeholder="Enter Name Here">
+                    <label class="text-2xl" for="email">Email</label>
+                    <input class="rounded-lg py-2 pl-4 bg-black border-2 border-[#AC54F1]" type="email" placeholder="Enter Email Here">
+                    <label class="text-2xl" for="email">Phone</label>
+                    <input class="rounded-lg py-2 pl-4 bg-black border-2 border-[#AC54F1]" type="number" placeholder="Enter Phone Here">
+                    <label class="text-2xl" for="message">Message</label>
+                    <textarea class="rounded-lg py-2 pl-4 bg-black border-2 border-[#AC54F1]" name="message" id="message" cols="30" rows="10" placeholder="Enter Message Here"></textarea>
+                    <button type="submit" class="px-6 py-2 rounded-md text-lg text-[#ffffff] mr-6 bg-gradient-to-r from-[#AC54F1] to-[#E7499F]" href="#">Send Message</button>
+                </form>
+           </div>
+
+  
+    <!-- Javascript part -->
+    <script>
+        //humbergur menu toggle function
+        function toggle(){
+            let icon = document.querySelector("#icon");
+            let div = document.querySelector("#div");
+            if(icon.className.includes("fa-solid fa-bars-staggered")){
+            icon.className = "fa-solid fa-xmark lg:hidden text-[30px] cursor-pointer hover:text-[#5F5DFE] ml-[220px] text-[#ffffff]"
+            div.classList.remove("hidden");
+            }else{
+                icon.className = "fa-solid fa-bars-staggered lg:hidden text-[30px] cursor-pointer hover:text-[#5F5DFE] ml-[220px] text-[#ffffff]"
+                div.classList.add("hidden");
+            }
+        }
+        // toggle function for dark and light mode
+        function DMLM(){
+           let i = document.querySelector("#i");
+           let body = document.querySelector("body");
+           let logo = document.querySelector("#logo");
+           let navbar = document.querySelector("#navbar");
+           let icon = document.querySelector("#icon");
+           if(i.classList.contains("fa-moon")){
+            logo.src = "./images/logo.png";
+            navbar.classList.remove("bg-[#1E1E1E]");
+            i.classList.remove("fa-moon");
+            i.classList.add("fa-sun", "mr-[-270px]", "text-[30px]", "cursor-pointer", "hover:text-[#5F5DFE]", "text-white", "ml-[40px]");
+            body.style.backgroundColor = "#ffffff";
+            body.style.color = "#000000";
+            icon.classList.add("text-black");
+            i.classList.add("text-black");
+           }else{
+            logo.src = "./images/whitelogo.png";
+            navbar.classList.add("bg-[#1E1E1E]");
+            i.classList.remove("fa-sun");
+            i.classList.add("fa-moon", "mr-[-270px]", "text-[30px]", "cursor-pointer", "hover:text-[#5F5DFE]", "text-white", "ml-[40px]");
+            body.style.backgroundColor = "#040404";
+            body.style.color = "#ffffff";
+            icon.classList.remove("text-black");
+            i.classList.remove("text-black");
+           }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

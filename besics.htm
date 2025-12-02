@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Besics Of Javascript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 style="text-align: center;">Javascript</h1>
+    <!-- dark mode and ligth mode -->
+    <!-- <button id="btn">dark</button> -->
+
+     <!-- romdon color with background -->
+    <!-- <button id="btn">dark</button> -->
+ 
+    <!-- counter -->
+     <!-- <h4>counter</h4>
+     <h1 id="show">0</h1>
+     <button id="increase">increase</button>
+     <button id="reset">reset</button>
+     <button id="decrease">decrease</button> -->
+
+     <!-- api calling -->
+     <!-- <p id="p"></p> -->
+
+
+    <script>
+        //FETCH api calling
+        // async function getdata(){
+        //     let p = document.getElementsByTagName(p)
+        //     try {
+        //         const url = "https://jsonplaceholder.typicode.com/posts/1";
+        //         let response = await fetch(url);
+        //         if(!response.ok){ throw new Error(`Request Error: ${response.status}`) }
+        //         const data = await response.json()
+        //         console.log(data.body)
+        //         p.innerText = data.body
+        //     } catch (error) {
+        //         console.error(error.message)
+        //     }
+        // }
+        // getdata();
+        
+
+        // // XMLHTTTPSREQUEST api calling
+        // let request = new XMLHttpRequest();
+        // request.open('GET','https://jsonplaceholder.typicode.com/posts/10');
+        // request.onload = function(){
+        //     if(request.status == 200){
+        //         let p = document.getElementById("p")
+        //         //console.log("Data",request.responseText)
+        //         let data = JSON.parse(request.response)
+        //         console.log(data.userId)
+        //         console.log(data.id)
+        //         console.log(data.title)
+        //         console.log(data.body)
+        //         p.innerHTML = data.body;
+        //     }else{
+        //         console.log("Error:",request.status)
+        //     }
+        // }
+        // request.send();
+        
+
+
+        //counter
+        // let show = document.getElementById("show")
+        // let increase = document.getElementById("increase")
+        // let reset = document.getElementById("reset")
+        // let decrease = document.getElementById("decrease")
+
+        // let number = 0;
+
+        // increase.addEventListener("click",()=>{
+        //     number = number + 1
+        //     show.innerHTML = number;
+        // })
+        // decrease.addEventListener("click",()=>{
+        //     number = number - 1
+        //     show.innerHTML = number;
+        // })
+        // reset.addEventListener("click",()=>{
+        //     number = 0;
+        //     show.innerHTML = number;
+        // })
+
+
+
+
+
+        // //dark mode and ligth mode
+        // let btn = document.getElementById("btn")
+        // btn.addEventListener("click",()=>{
+        //     if(btn.innerHTML == "dark"){
+        //         document.body.style.background = "black";
+        //         document.body.style.color = "white";
+        //         btn.innerHTML = "white";
+        //     }else if(btn.innerHTML == "white"){
+        //         document.body.style.background = "white";
+        //         document.body.style.color = "black";
+        //         btn.innerHTML = "dark";
+        //     }
+        // })
+
+        //romdon color with background 
+        // let btn = document.getElementById("btn")
+        // btn.addEventListener("click",()=>{
+        //     let rondomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+        //     document.body.style.background = rondomColor;
+        // })
+
+
+
+    </script>
+    <script src="main.js"></script>
+</body>
+</html>

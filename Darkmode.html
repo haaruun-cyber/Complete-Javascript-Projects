@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Mode | Light Mode</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- CSS part -->
+    <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+        /* CSS part */
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: "Poppins", sans-serif;
+        }
+    </style>
+</head>
+<body class="flex justify-center items-center h-[100vh]">
+    <!-- HTML part -->
+     <div>
+        <button class="bg-[#101723] text-white px-6 py-2 rounded-md" id="modeBtn" onclick="toggleMode()">Dark Mode</button>
+     </div>
+
+    <!-- Javascript part -->
+    <script>
+     
+     function toggleMode(){
+        let modeBtn = document.querySelector("#modeBtn");
+        if(modeBtn.innerHTML == "Dark Mode"){
+            document.body.classList.add("bg-[#101723]");
+            modeBtn.innerHTML = "Light Mode";
+            modeBtn.className = "bg-[white] text-[#101723] px-6 py-2 rounded-md";
+        }else{
+            document.body.classList.remove("bg-[#101723]");
+            modeBtn.innerHTML = "Dark Mode";
+            modeBtn.className = "bg-[#101723] text-white px-6 py-2 rounded-md";
+        }
+     }
+ 
+    </script>
+</body>
+</html>

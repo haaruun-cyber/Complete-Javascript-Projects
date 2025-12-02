@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CountDown</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Css part -->
+    <style>
+         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+        /* CSS part */
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: "Poppins", sans-serif;
+        }
+        .container{
+            box-shadow: 1px 1px 100px 3px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center h-[100vh] p-[30px]">
+    <!-- html part -->
+    <div class="container w-[300px] text-center rounded-md shadow-xl p-6">
+        <h2 class="text-[25px] font-bold">Count-Down</h2>
+        <h4 class="mt-5 text-[27px]" id="time"></h4>
+    </div>
+    <!-- javaScript part -->
+    <script>
+        //clock logic
+        let startingtime = 1440;
+        let time = startingtime * 60;
+        let show = document.getElementById('time');
+
+        setInterval(updatetime,1000)
+
+        function updatetime(){
+            let days = Math.floor(time / 86400);
+            let hours = Math.floor((time % 86400) / 3600);
+            let minutes = Math.floor((time % 3600) / 60);
+            let seconds = time % 60;
+
+            hours = hours < 10 ? '0' + hours : hours;
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+            show.innerHTML = `${days}D :${hours}H :${minutes}M :${seconds}S`;
+            time--;
+        }
+    </script>
+</body>
+</html>

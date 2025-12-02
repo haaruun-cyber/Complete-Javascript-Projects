@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- css part -->
+    <style>
+         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+        /* CSS part */
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: "Poppins", sans-serif;
+        }
+    </style>
+</head>
+<body class="flex justify-center items-center h-[100vh]">
+    <!-- html part -->
+    <div class="container w-[330px] text-center rounded-lg shadow-[1px_1px_100px_3px_rgba(0,0,0,0.3)] p-[30px]">
+        <h2 class="font-bold text-[30px] ">Counter</h2>
+        <h1 class="text-[50px]" id="number">0</h1>
+        <div class="btns">
+            <button class="bg-green-800 text-white border-none cursor-pointer text-center rounded-md px-5 py-2" id="increase" onclick="increase()">Increase</button>
+            <button class="bg-red-800 text-white border-none cursor-pointer text-center rounded-md px-5 py-2 ml-2" id="decrease" onclick="decrease()">Decrease</button>
+            <button class="bg-black text-white border-none cursor-pointer text-center rounded-md px-5 py-2 mt-4" id="reset" onclick="reset()">Reset</button>
+        </div>
+    </div>
+       <!--javascrpt part -->
+    <script>
+        //counter logic
+        let shownumber = document.getElementById('number')
+        number = 0
+        function increase(){
+            number++;
+            shownumber.innerHTML = number;
+        }
+
+        function decrease(){
+            number--;
+            shownumber.innerHTML = number;
+        }
+
+        function reset(){
+            number = 0;
+            shownumber.innerHTML = number;
+        }
+        
+    </script>
+</body>
+</html>
