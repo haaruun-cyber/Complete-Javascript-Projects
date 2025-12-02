@@ -31,10 +31,10 @@
         <!-- DESKTOP menu part -->
         <div class="hidden lg:flex gap-8 cursor-pointer">
             <a class="hover:text-[#5F5DFE] text-[#FFFFFF]  text-xl transition font-semibold" href="#">Home</a>
-            <a class="hover:text-[#5F5DFE] text-[#FFFFFF]  text-xl font-semibold" href="#">About</a>
-            <a class="hover:text-[#5F5DFE] text-[#FFFFFF]  text-xl font-semibold" href="#">Projects</a>
-            <a class="hover:text-[#5F5DFE] text-[#FFFFFF]  text-xl font-semibold" href="#">Service</a>
-            <a class="hover:text-[#5F5DFE] text-[#FFFFFF]  text-xl font-semibold" href="#">Contact</a>
+            <a class="hover:text-[#5F5DFE] text-[#FFFFFF]  text-xl font-semibold" href="#hero">About</a>
+            <a class="hover:text-[#5F5DFE] text-[#FFFFFF]  text-xl font-semibold" href="#projects">Projects</a>
+            <a class="hover:text-[#5F5DFE] text-[#FFFFFF]  text-xl font-semibold" href="#Technologies">Technologies</a>
+            <a class="hover:text-[#5F5DFE] text-[#FFFFFF]  text-xl font-semibold" href="#contact">Contact</a>
         </div>
         <!-- DESKTOP button -->
         <a class="hidden lg:flex px-6 py-2 rounded-md text-lg text-[#ffffff] mr-[-270px]" style="background: linear-gradient(135deg, #1E94EB, #4AB3FF);" href="#">Start Now</a>
@@ -46,10 +46,10 @@
          <div>
             <div class="hidden flex flex-col gap-5 cursor-pointer lg:hidden absolute bg-[#1E1E1E] backdrop-blur-[15px] border-2 border-gray-500 p-5 top-0 right-0 mr-10 mt-36 w-[200px] shadow-xl text-center rounded-md" id="div">
                 <a class="hover:text-[#5F5DFE] text-[#FFFFFF]  text-lg transition font-semibold" href="#">Home</a>
-                <a class="hover:text-[#5F5DFE] text-[#FFFFFF]  text-lg font-semibold" href="#">About</a>
-                <a class="hover:text-[#5F5DFE] text-[#FFFFFF]  text-lg font-semibold" href="#">Projects</a>
-                <a class="hover:text-[#5F5DFE] text-[#FFFFFF]  text-lg font-semibold" href="#">Service</a>
-                <a class="hover:text-[#5F5DFE] text-[#FFFFFF]  text-lg font-semibold" href="#">Contact</a>
+                <a class="hover:text-[#5F5DFE] text-[#FFFFFF]  text-lg font-semibold" href="#hero">About</a>
+                <a class="hover:text-[#5F5DFE] text-[#FFFFFF]  text-lg font-semibold" href="#projects">Projects</a>
+                <a class="hover:text-[#5F5DFE] text-[#FFFFFF]  text-lg font-semibold" href="#Technologies">Technologies</a>
+                <a class="hover:text-[#5F5DFE] text-[#FFFFFF]  text-lg font-semibold" href="#contact">Contact</a>
                 <!-- MOBILE button -->
                 <a class="px-6 py-2 rounded-md  text-lg text-[#ffffff]  lg:hidden" style="background: linear-gradient(135deg, #1E94EB, #4AB3FF);" href="#">Start Now</a>
             </div>
@@ -57,10 +57,10 @@
      </div>
 
      <!-- hero part -->
-      <div class="container lg:flex justify-between items-center px-20 py-20 gap-10">
+      <div class="container lg:flex justify-between items-center px-20 py-20 gap-10" id="hero">
         <!-- contant part -->
         <div class="content mb-10 lg:mb-0">
-            <h1 class="lg:text-7xl text-6xl  font-bold mb-6 leading-tight">
+            <h1 class="lg:text-7xl text-6xl  font-bold mb-6 leading-tight" id="btext">
                 <span class="inline-block bg-gradient-to-r from-[#0FFFFF] to-[#007FFF] bg-clip-text text-transparent">
                 Digital <br> Experiences
                 </span>
@@ -131,7 +131,7 @@
                 <p class="text-[#34D399]">
                     <i class="fa-solid fa-lines-leaning"></i>
                     What I Can Offer</p>
-                <h1 class="text-7xl">Creative <br> Engineering <br> Services</h1>
+                <h1 class="text-7xl" id="btext2">Creative <br> Engineering <br> Services</h1>
             </div>
                 <!-- Cards -->
         <div class="cards w-full grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-6 px-6 sm:px-10 lg:px-20 py-10">
@@ -181,7 +181,7 @@
         </div>
 
         <!-- projects part -->
-        <div class="projects mt-[50px]">
+        <div class="projects mt-[50px]" id="projects">
             <div class="text pl-[70px] lg:pl-10 px-6">
                 <p class="text-[#34D399] text-3xl">
                     <i class="fa-solid fa-lines-leaning"></i>
@@ -848,7 +848,7 @@
           </div>
 
           <!-- technical skills part -->
-          <div class="container pb-10">
+          <div class="container pb-10" id="Technologies">
             <div class="text text-center mt-[30px] lg:pl-[70px] lg:pl-10 px-6">
                 <h1 class="text-5xl font-semibold">
                     <span class="inline-block bg-gradient-to-r from-[#0FFFFF] to-[#007FFF] bg-clip-text text-transparent">
@@ -1000,7 +1000,7 @@
           </div>
 
           <!-- Contact part can be added here -->
-           <div class="contact w-full bg-[#1E1E1E] p-10 lg:px-20 mt-10 lg:mt-20 lg:flex justify-between gap-10 px-6 flex flex-col justify-center items-center">
+           <div class="contact w-full bg-[#1E1E1E] p-10 lg:px-20 mt-10 lg:mt-20 lg:flex justify-between gap-10 px-6 flex flex-col justify-center items-center" id="contact">
                 <div class="text mb-5 w-full">
                     <h1 class="text-center text-5xl mb-2 text-[#E7499F] font-semibold">Let's Collaborate</h1>
                     <p class="text-sm text-center">Whether you’re looking to start a project, have a question, or just want to say hi — my inbox is always open.</p>
@@ -1047,6 +1047,8 @@
             i.classList.add("fa-sun", "mr-[-270px]", "text-[30px]", "cursor-pointer", "hover:text-[#5F5DFE]", "text-white", "ml-[40px]");
             body.style.backgroundColor = "#ffffff";
             body.style.color = "#000000";
+            btext.classList.add("text-black");
+            btext2.classList.add("text-black");
             icon.classList.add("text-black");
             i.classList.add("text-black");
            }else{
