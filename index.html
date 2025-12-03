@@ -1037,14 +1037,12 @@
         function DMLM(){
            let i = document.querySelector("#i");
            let body = document.querySelector("body");
-           let logo = document.querySelector("#logo");
-           let navbar = document.querySelector("#navbar");
            let icon = document.querySelector("#icon");
            let te = document.querySelector("#te");
            if(i.classList.contains("fa-moon")){
             // logo.src = "./images/logo.png";
             
-            i.classList.remove("fa-moon");
+            i.classList.remove("fa-moon", "mr-[-270px]", "text-[30px]", "cursor-pointer", "hover:text-[#5F5DFE]", "text-white", "ml-[40px]");
             i.classList.add("fa-sun", "mr-[-270px]", "text-[30px]", "cursor-pointer", "hover:text-[#5F5DFE]", "text-black", "ml-[40px]");
             body.style.backgroundColor = "#ffffff";
             body.style.color = "#000000";
@@ -1056,11 +1054,13 @@
            }else{
             // logo.src = "./images/whitelogo.png";
            
-            i.classList.remove("fa-sun");
+            i.classList.remove("fa-sun", "mr-[-270px]", "text-[30px]", "cursor-pointer", "hover:text-[#5F5DFE]", "text-black", "ml-[40px]");
             i.classList.add("fa-moon", "mr-[-270px]", "text-[30px]", "cursor-pointer", "hover:text-[#5F5DFE]", "text-white", "ml-[40px]");
             body.classList.add("bg-[#040404]");
             body.classList.add("text-[#ffffff]");
-            // body.style.color = "#ffffff";
+            body.style.backgroundColor = "#040404";
+            body.style.color = "#ffffff";
+            text.classList.remove("text-black");
             icon.classList.remove("text-black");
             i.classList.remove("text-black");
            }
